@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domen
 {
+    [Serializable]
     public class Angazovanje : DomenskiObjekat
     {
         public Predmet Predmet { get; set; }
@@ -35,5 +36,6 @@ namespace Domen
         {
             throw new NotImplementedException();
         }
+       
     }
 }

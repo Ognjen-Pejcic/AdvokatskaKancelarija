@@ -46,7 +46,12 @@ namespace Kontroler
         public bool ZakaziSastanke(List<Sastanak> sastanci)
         {
             ApstraknaGenerickaOperacija operacija = new ZakaziSastankeSO();
-            return (bool)operacija.ExecuteSO((DomenskiObjekat)sastanci);
+            List<DomenskiObjekat> lista = new List<DomenskiObjekat>();
+            foreach(Sastanak s  in sastanci)
+            {
+                lista.Add(s);
+            }
+            return (bool)operacija.ExecuteSO(lista);
         }
         public List<Sastanak> NadjiSastanke(Sastanak sastanak)
         {

@@ -12,11 +12,14 @@ namespace Zajednicki
     {
         public Signal Signal { get; set; }
         public Sekretar Sekretar { get; set; }
+        public List<Advokat> ListaAdvokata { get; set; }
+        public List<Klijent> ListaKlijenata { get; set; }
     }
 
     public enum Signal
     {
         UspesnoPrijavljen,
-        KlijentUspesnoDodat
+        KlijentUspesnoDodat,
+        SastanciUspesnoZakazani
     }
 }

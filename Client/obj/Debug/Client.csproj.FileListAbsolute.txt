@@ -15,3 +15,4 @@ C:\Users\Ognjen\source\repos\AdvokatskaKancelarija\Client\obj\Debug\Client.exe
 C:\Users\Ognjen\source\repos\AdvokatskaKancelarija\Client\obj\Debug\Client.pdb
 C:\Users\Ognjen\source\repos\AdvokatskaKancelarija\Client\obj\Debug\Client.Forme.FrmGlavna.resources
 C:\Users\Ognjen\source\repos\AdvokatskaKancelarija\Client\obj\Debug\Client.Forme.UnosKlijentaFrm.resources
+C:\Users\Ognjen\source\repos\AdvokatskaKancelarija\Client\obj\Debug\Client.Forme.ZakazivanjeSastanakaFrm.resources

@@ -42,10 +42,11 @@ namespace Domen
                 Klijent klijent = new Klijent
                 {
                     KlijentID = reader.GetInt32(0),
-                    ImeKlijenta = reader.GetString(1),
-                    Prezime = reader.GetString(2),
-                    TelefonKlijenta = reader.GetString(3),
-                    AdresaKlijenta = reader.GetString(4),
+                    JMBGKlijenta = reader.GetString(1),
+                    ImeKlijenta = reader.GetString(2),
+                    Prezime = reader.GetString(3),
+                    TelefonKlijenta = reader.GetString(4),
+                    AdresaKlijenta = reader.GetString(5),
 
                 };
                 list.Add(klijent);
@@ -60,14 +61,19 @@ namespace Domen
             {
 
                 klijent.KlijentID = reader.GetInt32(0);
-                klijent.ImeKlijenta = reader.GetString(1);
-                klijent.Prezime = reader.GetString(2);
-                klijent.TelefonKlijenta = reader.GetString(3);
-                klijent.AdresaKlijenta = reader.GetString(4);
+                klijent.JMBGKlijenta = reader.GetString(1);
+                klijent.ImeKlijenta = reader.GetString(2);
+                klijent.Prezime = reader.GetString(3);
+                klijent.TelefonKlijenta = reader.GetString(4);
+                klijent.AdresaKlijenta = reader.GetString(5);
 
             }
             reader.Close();
             return klijent;
+        }
+        public override string ToString()
+        {
+            return ImeKlijenta + " " +Prezime;
         }
     }
 }

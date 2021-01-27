@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Domen
 {
     
-    //sve ok valjda
+   [Serializable]
     public class Advokat : DomenskiObjekat
     {
         public int AdvokatID{ get; set; }
@@ -58,6 +58,10 @@ namespace Domen
         public DomenskiObjekat GetEntity(SqlDataReader reader)
         {
             throw new NotImplementedException();
+        }
+        public override string ToString()
+        {
+            return ImeAdvokata + " " + PrezimeAdovakta;
         }
     }
 }

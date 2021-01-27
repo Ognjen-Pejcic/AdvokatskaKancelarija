@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domen
 {
-    //Predmet(PredmetID,KlijentID, NazivPredmeta, DatumOtvaranja, Arhiviran, OpisPredmeta, Faza,VrstaPostupka)
+    [Serializable]
     public class Predmet : DomenskiObjekat
     {
         public int PredmetID { get; set; }

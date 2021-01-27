@@ -1,6 +1,7 @@
 ﻿using Domen;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Net.Sockets;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -23,6 +24,38 @@ namespace Client
                 if (instance == null) instance = new Komunikacija();
                 return instance;
             }
+        }
+
+        internal List<Advokat> PrikaziAdvokate()
+        {
+            Zahtev zahtev = new Zahtev();
+            zahtev.Operacija = Operacija.VratiAdvokate;
+            formatter.Serialize(stream, zahtev);
+            Odgovor odgovor = (Odgovor)formatter.Deserialize(stream);
+            return odgovor.ListaAdvokata;
+        }
+
+        internal bool Sacuvaj(BindingList<Sastanak> sastanci)
+        {
+            Zahtev zahtev = new Zahtev();
+            zahtev.Sastanci = sastanci;
+            zahtev.Operacija = Operacija.ZakaziSastanke;
+            formatter.Serialize(stream, zahtev);
+            Odgovor odgovor = (Odgovor)formatter.Deserialize(stream);
+            if(odgovor.Signal == Signal.SastanciUspesnoZakazani)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        internal List<Klijent> PrikaziKlijente()
+        {
+            Zahtev zahtev = new Zahtev();
+            zahtev.Operacija = Operacija.VratiKlijente;
+            formatter.Serialize(stream, zahtev);
+            Odgovor odgovor = (Odgovor)formatter.Deserialize(stream);
+            return odgovor.ListaKlijenata;
         }
 
         internal bool DodajKlijenta(Klijent klijent)

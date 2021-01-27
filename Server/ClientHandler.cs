@@ -2,6 +2,7 @@
 using Kontroler;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Net.Sockets;
 using System.Runtime.Serialization.Formatters.Binary;
 using Zajednicki;
@@ -51,6 +52,17 @@ namespace Server
                                 odgovor.Signal = Signal.KlijentUspesnoDodat;
                             }
                             formatter.Serialize(stream, odgovor);
+                            break;
+                        case Operacija.VratiAdvokate:
+                            odgovor.ListaAdvokata = Controller.Instance.VratiListuAdvokata();
+                            formatter.Serialize(stream, odgovor);
+                            break;
+                        case Operacija.VratiKlijente:
+                            odgovor.ListaKlijenata = Controller.Instance.VratiListuKlijenata();
+                            formatter.Serialize(stream, odgovor);
+                            break;
+                        case Operacija.ZakaziSastanke:
+                            Controller.Instance.ZakaziSastanke(zahtev.Sastanci.ToList());
                             break;
                     }
                 }

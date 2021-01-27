@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 namespace Domen
 
 {
-    //Valjda sve ok
+    [Serializable]
     public class Sastanak : DomenskiObjekat
     {
         public int SastanakID { get; set; }
@@ -16,18 +17,20 @@ namespace Domen
         public Advokat Advokat { get; set; }
         public Klijent Klijent { get; set; }
 
+        [Browsable(false)]
         public string TableName => "Sastanak";
-
+        [Browsable(false)]
         public string InsertValues => $"'{DatumIVremeSastanka}', {Advokat.AdvokatID}, {Klijent.KlijentID}";
-
+        [Browsable(false)]
         public string JoinCondition => throw new NotImplementedException();
 
+        [Browsable(false)]
         public string JoinFull => $" s join advokat a on (s.advokatid = a.advokatid) join klijent k on (k.klijentid = s.klijentid)";
-
+        [Browsable(false)]
         public string KriterijumPretrage => $" datumvremesastanka = {DatumIVremeSastanka}";
-
+        [Browsable(false)]
         public string UpdateValues => throw new NotImplementedException();
-
+        [Browsable(false)]
         public string Arhiviranje => throw new NotImplementedException();
 
         public List<DomenskiObjekat> GetEntities(SqlDataReader reader)
