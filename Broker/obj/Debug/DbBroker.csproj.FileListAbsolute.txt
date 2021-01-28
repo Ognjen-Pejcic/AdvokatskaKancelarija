@@ -7,3 +7,12 @@ C:\Users\Ognjen\source\repos\AdvokatskaKancelarija\Broker\obj\Debug\DbBroker.csp
 C:\Users\Ognjen\source\repos\AdvokatskaKancelarija\Broker\obj\Debug\DbBroker.csproj.CopyComplete
 C:\Users\Ognjen\source\repos\AdvokatskaKancelarija\Broker\obj\Debug\Broker.dll
 C:\Users\Ognjen\source\repos\AdvokatskaKancelarija\Broker\obj\Debug\Broker.pdb
+C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Broker\bin\Debug\Broker.dll
+C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Broker\bin\Debug\Broker.pdb
+C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Broker\bin\Debug\Domen.dll
+C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Broker\bin\Debug\Domen.pdb
+C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Broker\obj\Debug\DbBroker.csprojAssemblyReference.cache
+C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Broker\obj\Debug\DbBroker.csproj.CoreCompileInputs.cache
+C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Broker\obj\Debug\DbBroker.csproj.CopyComplete
+C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Broker\obj\Debug\Broker.dll
+C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Broker\obj\Debug\Broker.pdb

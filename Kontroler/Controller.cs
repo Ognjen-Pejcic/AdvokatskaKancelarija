@@ -83,6 +83,14 @@ namespace Kontroler
             List<Klijent> klijenti = (List<Klijent>)operacija.ExecuteSO(new Klijent());
             return klijenti;
         }
+
+        public List<VrstaPostupka> VratiListuVrsta()
+        {
+            ApstraknaGenerickaOperacija operacija = new VratiListuVrstaSO();
+            List<VrstaPostupka> vrste = (List<VrstaPostupka>)operacija.ExecuteSO(new VrstaPostupka());
+            return vrste;
+        }
+
         public Klijent UcitajKlijenta(Klijent klijent)
         {
             ApstraknaGenerickaOperacija operacija = new UcitajKlijentaSO();

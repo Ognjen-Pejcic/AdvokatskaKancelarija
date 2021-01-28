@@ -40,5 +40,11 @@ namespace Client.Forme
             ZakazivanjeSastanakaFrm frm = new ZakazivanjeSastanakaFrm();
             frm.ShowDialog();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            UnosPredmetaFrm frm = new UnosPredmetaFrm();
+            frm.ShowDialog();
+        }
     }
 }

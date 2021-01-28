@@ -62,7 +62,15 @@ namespace Server
                             formatter.Serialize(stream, odgovor);
                             break;
                         case Operacija.ZakaziSastanke:
-                            Controller.Instance.ZakaziSastanke(zahtev.Sastanci.ToList());
+                            if (Controller.Instance.ZakaziSastanke(zahtev.Sastanci.ToList()))
+                            {
+                                odgovor.Signal = Signal.SastanciUspesnoZakazani;
+                            }
+                            formatter.Serialize(stream, odgovor);
+                            break;
+                        case Operacija.VratiVrste:
+                            odgovor.ListaVrsta = Controller.Instance.VratiListuVrsta();
+                            formatter.Serialize(stream, odgovor);
                             break;
                     }
                 }

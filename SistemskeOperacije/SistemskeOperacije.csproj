@@ -52,6 +52,7 @@
     <Compile Include="UcitajSastanakSO.cs" />
     <Compile Include="VratiListuAdvokataSO.cs" />
     <Compile Include="VratiListuKlijnataSO.cs" />
+    <Compile Include="VratiListuVrstaSO.cs" />
     <Compile Include="VratiSekretareSO.cs" />
     <Compile Include="ZakaziSastankeSO.cs" />
     <Compile Include="ZapamtiKlijentaSO.cs" />

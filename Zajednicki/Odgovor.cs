@@ -14,6 +14,7 @@ namespace Zajednicki
         public Sekretar Sekretar { get; set; }
         public List<Advokat> ListaAdvokata { get; set; }
         public List<Klijent> ListaKlijenata { get; set; }
+        public List<VrstaPostupka> ListaVrsta { get; set; }
     }
 
     public enum Signal

@@ -24,7 +24,16 @@ namespace SistemskeOperacije
 
         protected override object Execute(List<DomenskiObjekat> domenskiObjekat)
         {
-            throw new NotImplementedException();
+            
+            bool signal = true;
+            foreach (Sastanak s in domenskiObjekat)
+            {
+                if (!(broker.Sacuvaj(s) > 0))
+                {
+                    signal = false;
+                }
+            }
+            return signal;
         }
 
         protected override void Validate(DomenskiObjekat domenskiObjekat)
@@ -37,7 +46,12 @@ namespace SistemskeOperacije
 
         protected override void Validate(List<DomenskiObjekat> domenskiObjekat)
         {
-            throw new NotImplementedException();
+            foreach(DomenskiObjekat obj in domenskiObjekat) { 
+            if (!(obj is Sastanak))
+            {
+                throw new ArgumentException();
+            }
+            }
         }
     }
 }

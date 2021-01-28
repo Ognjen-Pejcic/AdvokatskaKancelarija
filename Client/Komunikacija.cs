@@ -26,6 +26,15 @@ namespace Client
             }
         }
 
+        internal List<VrstaPostupka> PrikaziVrste()
+        {
+            Zahtev zahtev = new Zahtev();
+            zahtev.Operacija = Operacija.VratiVrste;
+            formatter.Serialize(stream, zahtev);
+            Odgovor odgovor = (Odgovor)formatter.Deserialize(stream);
+            return odgovor.ListaVrsta;
+        }
+
         internal List<Advokat> PrikaziAdvokate()
         {
             Zahtev zahtev = new Zahtev();

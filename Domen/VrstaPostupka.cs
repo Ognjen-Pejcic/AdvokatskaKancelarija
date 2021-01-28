@@ -26,12 +26,28 @@ namespace Domen
 
         public List<DomenskiObjekat> GetEntities(SqlDataReader reader)
         {
-            throw new System.NotImplementedException();
+            List<DomenskiObjekat> list = new List<DomenskiObjekat>();
+            while (reader.Read())
+            {
+                VrstaPostupka vrsta = new VrstaPostupka
+                {
+                    VrstaPostupkaID = reader.GetInt32(0),
+                    NazivVrste = reader.GetString(1)
+                    
+
+                };
+                list.Add(vrsta);
+            }
+            return list;
         }
 
         public DomenskiObjekat GetEntity(SqlDataReader reader)
         {
             throw new System.NotImplementedException();
+        }
+        public override string ToString()
+        {
+            return NazivVrste;
         }
     }
 }

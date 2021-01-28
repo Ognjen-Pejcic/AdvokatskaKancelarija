@@ -12,6 +12,8 @@ namespace Domen
    [Serializable]
     public class Advokat : DomenskiObjekat
     {
+        [Browsable(false)]
+
         public int AdvokatID{ get; set; }
         public string ImeAdvokata { get; set; }
         public string PrezimeAdovakta { get; set; }
@@ -20,20 +22,25 @@ namespace Domen
 
         [Browsable(false)]
         public string TableName => "Advokat";
-
+        [Browsable(false)]
         public string InsertValues => throw new NotImplementedException();
 
+        [Browsable(false)]
 
         public string JoinCondition => throw new NotImplementedException();
+        [Browsable(false)]
 
         public string JoinFull => throw new NotImplementedException();
 
-     
+        [Browsable(false)]
+
 
         public string KriterijumPretrage => $"AdvokatID = {AdvokatID}";
 
+        [Browsable(false)]
 
         public string UpdateValues => throw new NotImplementedException();
+        [Browsable(false)]
 
         public string Arhiviranje => throw new NotImplementedException();
 

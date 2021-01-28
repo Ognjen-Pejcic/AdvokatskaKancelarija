@@ -23,6 +23,7 @@ namespace Zajednicki
         DodajKlijenta,
         VratiAdvokate,
         VratiKlijente,
-        ZakaziSastanke
+        ZakaziSastanke,
+        VratiVrste
     }
 }
