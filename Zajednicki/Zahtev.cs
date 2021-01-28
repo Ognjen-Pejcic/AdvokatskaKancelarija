@@ -15,6 +15,9 @@ namespace Zajednicki
         public Sekretar Sekretar { get; set; }
         public Klijent Klijent { get; set; }
         public BindingList<Sastanak> Sastanci { get; set; }
+        public DomenskiObjekat DomenskiObjekat { get; set; }
+        public Predmet Predmet { get; set; }
+        public List<Angazovanje> Angazovanja { get; set; }
     }
 
     public enum Operacija
@@ -24,6 +27,8 @@ namespace Zajednicki
         VratiAdvokate,
         VratiKlijente,
         ZakaziSastanke,
-        VratiVrste
+        VratiVrste,
+        VratiID,
+        DodajPredmet
     }
 }

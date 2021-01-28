@@ -35,6 +35,16 @@ namespace Client
             return odgovor.ListaVrsta;
         }
 
+        internal int VratiMaxID(DomenskiObjekat domenskiObjekat)
+        {
+            Zahtev zahtev = new Zahtev();
+            zahtev.Operacija = Operacija.VratiID;
+            zahtev.DomenskiObjekat = domenskiObjekat;
+            formatter.Serialize(stream, zahtev);
+            Odgovor odgovor = (Odgovor)formatter.Deserialize(stream);
+            return odgovor.ID;
+        }
+
         internal List<Advokat> PrikaziAdvokate()
         {
             Zahtev zahtev = new Zahtev();
@@ -42,6 +52,21 @@ namespace Client
             formatter.Serialize(stream, zahtev);
             Odgovor odgovor = (Odgovor)formatter.Deserialize(stream);
             return odgovor.ListaAdvokata;
+        }
+
+        internal bool DodajPredmet(Predmet predmet, List<Angazovanje> angazovanja)
+        {
+            Zahtev zahtev = new Zahtev();
+            zahtev.Operacija = Operacija.DodajPredmet;
+            zahtev.Predmet = predmet;
+            zahtev.Angazovanja = angazovanja;
+            formatter.Serialize(stream, zahtev);
+            Odgovor odgovor = (Odgovor)formatter.Deserialize(stream);
+            if(odgovor.Signal == Signal.PredmetUspesnoDodat)
+            {
+                return true;
+            }
+            return false;
         }
 
         internal bool Sacuvaj(BindingList<Sastanak> sastanci)

@@ -7,16 +7,29 @@ using System.Threading.Tasks;
 
 namespace SistemskeOperacije
 {
+    
     public class ZapamtiPredmetSO : ApstraknaGenerickaOperacija
     {
+        public List<Angazovanje> angazovanja = new List<Angazovanje>();
+        public ZapamtiPredmetSO(List<Angazovanje> angazovanja)
+        {
+            this.angazovanja = angazovanja;
+        }
         protected override object Execute(DomenskiObjekat domenskiObjekat)
         {
             Predmet predmet= (Predmet)domenskiObjekat;
-            if (broker.Sacuvaj(predmet) > 0)
+            bool odgovor = true;
+            if (broker.Sacuvaj(predmet) <= 0)
             {
-                return true;
+                odgovor =  false;
             }
-            return false;
+            foreach(Angazovanje a in angazovanja)
+            {
+                if (broker.Sacuvaj(a) <= 0) {
+                    odgovor = false;
+                }
+            }
+            return odgovor;
         }
 
         protected override object Execute(List<DomenskiObjekat> domenskiObjekat)

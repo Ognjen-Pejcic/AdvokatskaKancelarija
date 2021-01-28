@@ -72,6 +72,17 @@ namespace Server
                             odgovor.ListaVrsta = Controller.Instance.VratiListuVrsta();
                             formatter.Serialize(stream, odgovor);
                             break;
+                        case Operacija.VratiID:
+                            odgovor.ID = Controller.Instance.VratiID(zahtev.DomenskiObjekat);
+                            formatter.Serialize(stream,odgovor);
+                            break;
+                        case Operacija.DodajPredmet:
+                            if(Controller.Instance.SacuvajPredmet(zahtev.Predmet, zahtev.Angazovanja))
+                            {
+                                odgovor.Signal = Signal.PredmetUspesnoDodat;
+                            }
+                            formatter.Serialize(stream, odgovor);
+                            break;
                     }
                 }
             }

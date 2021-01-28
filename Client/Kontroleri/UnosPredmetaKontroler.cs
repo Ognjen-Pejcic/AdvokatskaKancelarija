@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Client.Kontroleri
 {
@@ -23,7 +24,7 @@ namespace Client.Kontroleri
         {
             Predmet predmet = new Predmet
             {
-                //IDDDDDD
+                PredmetID = Komunikacija.Instance.VratiMaxID(new Predmet())+1,
                 Klijent = (Klijent)klijent,
                 NazivPremdeta = naziv,
                 DatumOtvaranja = datumVreme, 
@@ -32,6 +33,7 @@ namespace Client.Kontroleri
                 Faza = (String)faza,
                 VrstaPostupka = (VrstaPostupka)vrsta
             };
+        
             foreach (Advokat advokat in angazovaniAdvokati)
             {
                 angazovanja.Add(new Angazovanje
@@ -39,6 +41,14 @@ namespace Client.Kontroleri
                     Advokat =advokat,
                     Predmet = predmet
                 });
+            }
+            if (Komunikacija.Instance.DodajPredmet(predmet, angazovanja))
+            {
+                MessageBox.Show("Sistem je sacuvao predmet");
+            }
+            else
+            {
+                MessageBox.Show("Sistem nije sacuvao predmet");
             }
         }
     }

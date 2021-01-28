@@ -20,3 +20,14 @@ C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\SistemskeOperaci
 C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\SistemskeOperacije\obj\Debug\SistemskeOperacije.csproj.CopyComplete
 C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\SistemskeOperacije\obj\Debug\SistemskeOperacije.dll
 C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\SistemskeOperacije\obj\Debug\SistemskeOperacije.pdb
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\SistemskeOperacije\bin\Debug\SistemskeOperacije.dll
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\SistemskeOperacije\bin\Debug\SistemskeOperacije.pdb
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\SistemskeOperacije\bin\Debug\Broker.dll
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\SistemskeOperacije\bin\Debug\Domen.dll
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\SistemskeOperacije\bin\Debug\Broker.pdb
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\SistemskeOperacije\bin\Debug\Domen.pdb
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\SistemskeOperacije\obj\Debug\SistemskeOperacije.csprojAssemblyReference.cache
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\SistemskeOperacije\obj\Debug\SistemskeOperacije.csproj.CoreCompileInputs.cache
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\SistemskeOperacije\obj\Debug\SistemskeOperacije.csproj.CopyComplete
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\SistemskeOperacije\obj\Debug\SistemskeOperacije.dll
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\SistemskeOperacije\obj\Debug\SistemskeOperacije.pdb

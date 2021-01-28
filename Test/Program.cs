@@ -21,7 +21,7 @@ namespace Test
 
 
             };
-
+           
             Predmet p = new Predmet
             {
                 PredmetID = 2,
@@ -53,16 +53,7 @@ namespace Test
             //{
             //    Console.WriteLine(aa.NazivPremdeta);
             //}
-            try
-            {
-                b.Arhiviraj(p);
-                Console.WriteLine("232ebwh");
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-
+            Console.WriteLine(b.VratiMaxID(a));
 
         }
     }

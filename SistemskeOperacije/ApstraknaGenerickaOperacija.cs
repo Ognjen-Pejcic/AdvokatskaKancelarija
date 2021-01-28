@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Domen;
 using DbBroker;
+using System.Windows.Forms;
+
 namespace SistemskeOperacije
 {
     public abstract class ApstraknaGenerickaOperacija
@@ -30,8 +32,9 @@ namespace SistemskeOperacije
 
                 broker.Commit();
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                MessageBox.Show(e.Message);
                 broker.Rollback();
 
             }

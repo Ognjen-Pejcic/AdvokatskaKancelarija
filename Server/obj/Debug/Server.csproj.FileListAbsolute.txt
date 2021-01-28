@@ -40,3 +40,24 @@ C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Server\obj\Debug
 C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Server\obj\Debug\Server.csproj.CopyComplete
 C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Server\obj\Debug\Server.exe
 C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Server\obj\Debug\Server.pdb
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Server\obj\Debug\Server.csprojAssemblyReference.cache
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Server\obj\Debug\Server.FrmServer.resources
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Server\obj\Debug\Server.csproj.GenerateResource.cache
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Server\obj\Debug\Server.exe
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Server\obj\Debug\Server.pdb
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Server\bin\Debug\Server.exe.config
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Server\bin\Debug\Server.exe
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Server\bin\Debug\Server.pdb
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Server\bin\Debug\Domen.dll
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Server\bin\Debug\Kontroler.dll
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Server\bin\Debug\Zajednicki.dll
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Server\bin\Debug\Broker.dll
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Server\bin\Debug\SistemskeOperacije.dll
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Server\bin\Debug\Domen.pdb
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Server\bin\Debug\Kontroler.pdb
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Server\bin\Debug\Zajednicki.pdb
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Server\bin\Debug\Broker.pdb
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Server\bin\Debug\SistemskeOperacije.pdb
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Server\obj\Debug\Server.csproj.CopyComplete

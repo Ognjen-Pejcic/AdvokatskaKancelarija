@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Domen; 
 namespace DbBroker
 {
@@ -64,6 +65,23 @@ namespace DbBroker
             List<DomenskiObjekat> rezultat = domenskiObjekat.GetEntities(reader);
             reader.Close();
             return rezultat;
+
+        }
+        public int VratiMaxID(DomenskiObjekat domenskiObjekat)
+        {
+            SqlCommand command = new SqlCommand("", connection, transaction);
+            command.CommandText = $"SELECT max({domenskiObjekat.TableName}id) FROM {domenskiObjekat.TableName}";
+            Console.WriteLine(command.CommandText);
+            SqlDataReader reader = command.ExecuteReader();
+            int id = 0;
+            while (reader.Read())
+            {
+                
+                id = reader.GetInt32(0);
+            }
+            reader.Close();
+            return id; 
+            
 
         }
         public DomenskiObjekat VratiJedan(DomenskiObjekat domenskiObjekat)

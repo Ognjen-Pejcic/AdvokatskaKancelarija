@@ -16,3 +16,12 @@ C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Zajednicki\obj\D
 C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Zajednicki\obj\Debug\Zajednicki.csproj.CopyComplete
 C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Zajednicki\obj\Debug\Zajednicki.dll
 C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Zajednicki\obj\Debug\Zajednicki.pdb
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Zajednicki\bin\Debug\Zajednicki.dll
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Zajednicki\bin\Debug\Zajednicki.pdb
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Zajednicki\bin\Debug\Domen.dll
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Zajednicki\bin\Debug\Domen.pdb
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Zajednicki\obj\Debug\Zajednicki.csprojAssemblyReference.cache
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Zajednicki\obj\Debug\Zajednicki.csproj.CoreCompileInputs.cache
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Zajednicki\obj\Debug\Zajednicki.csproj.CopyComplete
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Zajednicki\obj\Debug\Zajednicki.dll
+C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Zajednicki\obj\Debug\Zajednicki.pdb

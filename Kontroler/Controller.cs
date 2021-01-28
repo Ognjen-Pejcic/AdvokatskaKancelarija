@@ -33,9 +33,9 @@ namespace Kontroler
             return sekretari;
         }
 
-        public bool SacuvajPredmet(Predmet predmet)
+        public bool SacuvajPredmet(Predmet predmet, List<Angazovanje> angazovanja)
         {
-            ApstraknaGenerickaOperacija operacija = new ZapamtiPredmetSO();
+            ApstraknaGenerickaOperacija operacija = new ZapamtiPredmetSO(angazovanja);
             return (bool)operacija.ExecuteSO(predmet);
         }
         public bool SacuvajKlijenta(Klijent klijent)
@@ -96,6 +96,13 @@ namespace Kontroler
             ApstraknaGenerickaOperacija operacija = new UcitajKlijentaSO();
             return (Klijent)operacija.ExecuteSO(klijent);
         }
+
+        public int VratiID(DomenskiObjekat domenskiObjekat)
+        {
+            ApstraknaGenerickaOperacija operacija = new VratiIDSO();
+            return (int)operacija.ExecuteSO(domenskiObjekat);
+        }
+
         public Sastanak UcitajSastanak(Sastanak sastanak)
         {
             ApstraknaGenerickaOperacija operacija = new UcitajKlijentaSO();

@@ -77,7 +77,6 @@
     <Compile Include="Forme\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Kontroleri\Advokati.cs" />
     <Compile Include="Kontroleri\DodajKlijentaKontroler.cs" />
     <Compile Include="Kontroleri\UnosPredmetaKontroler.cs" />
     <Compile Include="Kontroleri\LoginKontroler.cs" />

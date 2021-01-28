@@ -15,12 +15,14 @@ namespace Zajednicki
         public List<Advokat> ListaAdvokata { get; set; }
         public List<Klijent> ListaKlijenata { get; set; }
         public List<VrstaPostupka> ListaVrsta { get; set; }
+        public int ID { get; set; }
     }
 
     public enum Signal
     {
         UspesnoPrijavljen,
         KlijentUspesnoDodat,
-        SastanciUspesnoZakazani
+        SastanciUspesnoZakazani,
+        PredmetUspesnoDodat
     }
 }

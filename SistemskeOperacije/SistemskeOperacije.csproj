@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,6 +51,7 @@
     <Compile Include="UcitajKlijentaSO.cs" />
     <Compile Include="UcitajPredmetSO.cs" />
     <Compile Include="UcitajSastanakSO.cs" />
+    <Compile Include="VratiIDSO.cs" />
     <Compile Include="VratiListuAdvokataSO.cs" />
     <Compile Include="VratiListuKlijnataSO.cs" />
     <Compile Include="VratiListuVrstaSO.cs" />

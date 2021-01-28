@@ -15,7 +15,7 @@ namespace Domen
 
         public string TableName => "Angazovanje";
 
-        public string InsertValues => $"{Predmet.PredmetID}, {Advokat.AdvokatID}";
+        public string InsertValues => $"{Predmet.PredmetID}, {Advokat.AdvokatID}, {Predmet.Klijent.KlijentID}";
 
         public string JoinCondition => throw new NotImplementedException();
 
