@@ -19,7 +19,8 @@ namespace Domen
 
         string UpdateValues { get; }
         string Arhiviranje { get; }
-
+        string UslovZaFiltriranje { get;  }
+        void PostaviVrednostiPretrage(string kriterijum, string text);
         List<DomenskiObjekat> GetEntities(SqlDataReader reader);
         DomenskiObjekat GetEntity(SqlDataReader reader);
     }

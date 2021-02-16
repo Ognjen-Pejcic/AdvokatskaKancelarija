@@ -21,3 +21,15 @@ C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Test\obj\Debug\Test.cspro
 C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Test\obj\Debug\Test.csproj.CopyComplete
 C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Test\obj\Debug\Test.exe
 C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Test\obj\Debug\Test.pdb
+C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Test\bin\Debug\Test.exe.config
+C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Test\bin\Debug\Test.exe
+C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Test\bin\Debug\Test.pdb
+C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Test\bin\Debug\Broker.dll
+C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Test\bin\Debug\Domen.dll
+C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Test\bin\Debug\Broker.pdb
+C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Test\bin\Debug\Domen.pdb
+C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Test\obj\Debug\Test.csproj.CopyComplete
+C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Test\obj\Debug\Test.exe
+C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Test\obj\Debug\Test.pdb
+C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Test\obj\Debug\Test.csprojAssemblyReference.cache

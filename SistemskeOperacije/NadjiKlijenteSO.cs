@@ -12,7 +12,7 @@ namespace SistemskeOperacije
         protected override object Execute(DomenskiObjekat domenskiObjekat)
         {
             Klijent klijent = (Klijent)domenskiObjekat;
-            List<Klijent> klijenti = broker.Pronadji(domenskiObjekat).OfType<Klijent>().ToList();
+            List<Klijent> klijenti = broker.Filtriraj(domenskiObjekat).OfType<Klijent>().ToList();
             return klijenti;
         }
 

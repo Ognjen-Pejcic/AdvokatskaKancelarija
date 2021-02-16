@@ -18,13 +18,22 @@ namespace SistemskeOperacije
         protected override object Execute(DomenskiObjekat domenskiObjekat)
         {
             Predmet predmet= (Predmet)domenskiObjekat;
+           
+            
             bool odgovor = true;
             if (broker.Sacuvaj(predmet) <= 0)
             {
                 odgovor =  false;
             }
+            
+            List<DomenskiObjekat> p = broker.VratiSve(new Predmet());
+            foreach(Predmet p1 in p)
+            {
+                Console.WriteLine(p1.PredmetID + " " + p1.Klijent.KlijentID);
+            }
             foreach(Angazovanje a in angazovanja)
             {
+               a.Predmet.PredmetID = broker.VratiMaxID(predmet);
                 if (broker.Sacuvaj(a) <= 0) {
                     odgovor = false;
                 }

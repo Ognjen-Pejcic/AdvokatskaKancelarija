@@ -144,28 +144,33 @@
             // cbKlijent
             // 
             this.cbKlijent.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbKlijent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKlijent.FormattingEnabled = true;
             this.cbKlijent.Location = new System.Drawing.Point(324, 43);
             this.cbKlijent.Name = "cbKlijent";
-            this.cbKlijent.Size = new System.Drawing.Size(400, 21);
+            this.cbKlijent.Size = new System.Drawing.Size(517, 21);
             this.cbKlijent.TabIndex = 9;
             // 
             // cbAdvokati
             // 
             this.cbAdvokati.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbAdvokati.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAdvokati.FormattingEnabled = true;
             this.cbAdvokati.Location = new System.Drawing.Point(324, 344);
             this.cbAdvokati.Name = "cbAdvokati";
-            this.cbAdvokati.Size = new System.Drawing.Size(400, 21);
+            this.cbAdvokati.Size = new System.Drawing.Size(517, 21);
             this.cbAdvokati.TabIndex = 10;
             // 
             // dgvAdvokati
             // 
+            this.dgvAdvokati.AllowUserToAddRows = false;
+            this.dgvAdvokati.AllowUserToDeleteRows = false;
+            this.dgvAdvokati.AllowUserToOrderColumns = true;
             this.dgvAdvokati.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvAdvokati.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAdvokati.Location = new System.Drawing.Point(324, 390);
             this.dgvAdvokati.Name = "dgvAdvokati";
-            this.dgvAdvokati.Size = new System.Drawing.Size(400, 150);
+            this.dgvAdvokati.Size = new System.Drawing.Size(517, 150);
             this.dgvAdvokati.TabIndex = 11;
             // 
             // txtNaziv
@@ -173,28 +178,30 @@
             this.txtNaziv.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNaziv.Location = new System.Drawing.Point(324, 77);
             this.txtNaziv.Name = "txtNaziv";
-            this.txtNaziv.Size = new System.Drawing.Size(400, 20);
+            this.txtNaziv.Size = new System.Drawing.Size(517, 20);
             this.txtNaziv.TabIndex = 12;
             // 
             // cbVrsta
             // 
             this.cbVrsta.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbVrsta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbVrsta.FormattingEnabled = true;
             this.cbVrsta.Location = new System.Drawing.Point(324, 316);
             this.cbVrsta.Name = "cbVrsta";
-            this.cbVrsta.Size = new System.Drawing.Size(400, 21);
+            this.cbVrsta.Size = new System.Drawing.Size(517, 21);
             this.cbVrsta.TabIndex = 14;
             // 
             // cbFaza
             // 
             this.cbFaza.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbFaza.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFaza.FormattingEnabled = true;
             this.cbFaza.Items.AddRange(new object[] {
             "Prvostepeni postupak",
             "Drugostepeni postupak"});
             this.cbFaza.Location = new System.Drawing.Point(324, 285);
             this.cbFaza.Name = "cbFaza";
-            this.cbFaza.Size = new System.Drawing.Size(400, 21);
+            this.cbFaza.Size = new System.Drawing.Size(517, 21);
             this.cbFaza.TabIndex = 15;
             // 
             // chBArhiviran
@@ -212,13 +219,13 @@
             this.dtpDatum.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtpDatum.Location = new System.Drawing.Point(324, 107);
             this.dtpDatum.Name = "dtpDatum";
-            this.dtpDatum.Size = new System.Drawing.Size(400, 20);
+            this.dtpDatum.Size = new System.Drawing.Size(517, 20);
             this.dtpDatum.TabIndex = 17;
             // 
             // btnDodaj
             // 
             this.btnDodaj.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDodaj.Location = new System.Drawing.Point(756, 344);
+            this.btnDodaj.Location = new System.Drawing.Point(863, 344);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(75, 34);
             this.btnDodaj.TabIndex = 18;
@@ -229,7 +236,7 @@
             // btnSacuvaj
             // 
             this.btnSacuvaj.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSacuvaj.Location = new System.Drawing.Point(756, 494);
+            this.btnSacuvaj.Location = new System.Drawing.Point(863, 494);
             this.btnSacuvaj.Name = "btnSacuvaj";
             this.btnSacuvaj.Size = new System.Drawing.Size(75, 46);
             this.btnSacuvaj.TabIndex = 19;
@@ -242,7 +249,7 @@
             this.txtOpis.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtOpis.Location = new System.Drawing.Point(324, 173);
             this.txtOpis.Name = "txtOpis";
-            this.txtOpis.Size = new System.Drawing.Size(400, 97);
+            this.txtOpis.Size = new System.Drawing.Size(517, 97);
             this.txtOpis.TabIndex = 20;
             this.txtOpis.Text = "";
             // 

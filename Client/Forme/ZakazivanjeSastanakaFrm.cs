@@ -27,6 +27,12 @@ namespace Client.Forme
 
         private void btnDodaj_Load(object sender, EventArgs e)
         {
+            dgvSastanci.DataSource = kontroler.sastanci;
+            dgvSastanci.Columns["SastanakID"].Visible = false;
+            dgvSastanci.Columns[1].HeaderText = " Datum i vreme sastanka";
+            dtpDatum.Format = DateTimePickerFormat.Custom;
+            dtpDatum.CustomFormat = "MM/dd/yyyy hh:mm:ss tt";
+            dgvSastanci.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             cbKlijent.DataSource = Komunikacija.Instance.PrikaziKlijente();
             cbAdvokat.DataSource = Komunikacija.Instance.PrikaziAdvokate();
         }
@@ -34,8 +40,8 @@ namespace Client.Forme
         private void btnDodaj_Click(object sender, EventArgs e)
         {
             kontroler.Dodaj(cbAdvokat.SelectedItem, cbKlijent.SelectedItem, dtpDatum.Value);
-            dgvSastanci.DataSource = kontroler.sastanci;
-            dgvSastanci.Columns["SastanakID"].Visible = false;
+           
+          
         }
     }
 }

@@ -59,15 +59,17 @@ namespace Kontroler
             List < Sastanak > sastanci = (List<Sastanak>)operacija.ExecuteSO(sastanak);
             return sastanci;
         }
-        public List<Klijent> NadjiKlijente(Klijent klijent)
+        public List<Klijent> NadjiKlijente(string kriterijumPretrage, string textPretrage, Klijent klijent)
         {
             ApstraknaGenerickaOperacija operacija = new NadjiKlijenteSO();
+            klijent.PostaviVrednostiPretrage(kriterijumPretrage, textPretrage);
             List<Klijent> klijenti= (List<Klijent>)operacija.ExecuteSO(klijent);
             return klijenti;
         }
-        public List<Predmet> NadjiPredmete(Predmet predmet)
+        public List<Predmet> NadjiPredmete(string kriterijumPretrage, string textPretrage, Predmet predmet)
         {
-            ApstraknaGenerickaOperacija operacija = new NadjiSastankeSO();
+            ApstraknaGenerickaOperacija operacija = new NadjiPredmeteSO();
+            predmet.PostaviVrednostiPretrage(kriterijumPretrage, textPretrage);
             List<Predmet> predmeti= (List<Predmet>)operacija.ExecuteSO(predmet);
             return predmeti;
         }
@@ -113,10 +115,18 @@ namespace Kontroler
             ApstraknaGenerickaOperacija operacija = new UcitajPredmetSO();
             return (Predmet)operacija.ExecuteSO(predmet);
         }
+
+
         public bool ArhivirajPredmet(Predmet predmet)
         {
             ApstraknaGenerickaOperacija operacija = new ArhivirajPredmetSO();
             return (bool)operacija.ExecuteSO(predmet);
+        }
+
+        public bool IzmeniKlijena(Klijent klijent)
+        {
+            ApstraknaGenerickaOperacija operacija = new IzmeniKlijentaSO();
+            return (bool)operacija.ExecuteSO(klijent);
         }
     }
 }

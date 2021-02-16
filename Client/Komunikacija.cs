@@ -26,6 +26,20 @@ namespace Client
             }
         }
 
+        internal bool IzmeniKlienta(Klijent klijent)
+        {
+            Zahtev zahtev = new Zahtev();
+            zahtev.Operacija = Operacija.IzmeniKlijenta;
+            zahtev.Klijent = klijent;
+            formatter.Serialize(stream, zahtev);
+            Odgovor odgovor = (Odgovor)formatter.Deserialize(stream);
+            if(odgovor.Signal == Signal.KlijentUspesnoIzmenjen)
+            {
+                return true;
+            }
+            return false;
+        }
+
         internal List<VrstaPostupka> PrikaziVrste()
         {
             Zahtev zahtev = new Zahtev();
@@ -33,6 +47,16 @@ namespace Client
             formatter.Serialize(stream, zahtev);
             Odgovor odgovor = (Odgovor)formatter.Deserialize(stream);
             return odgovor.ListaVrsta;
+        }
+
+        internal Klijent PrikaziKlijenta(int id)
+        {
+            Zahtev zahtev = new Zahtev();
+            zahtev.Operacija = Operacija.VratiKlijenta;
+            zahtev.ID = id;
+            formatter.Serialize(stream, zahtev);
+            Odgovor odgovor = (Odgovor)formatter.Deserialize(stream);
+            return odgovor.Klijent;
         }
 
         internal int VratiMaxID(DomenskiObjekat domenskiObjekat)
@@ -143,5 +167,17 @@ namespace Client
             }
         }
 
+        internal List<Klijent> VratiKlijente(string kriterijum, string text)
+        {
+            Zahtev zahtev = new Zahtev();
+            zahtev.Operacija = Operacija.PretraziKlijente;
+            zahtev.KriterijumPretrage = kriterijum;
+            zahtev.TekstPretrage = text;
+            formatter.Serialize(stream,zahtev);
+            Odgovor odgovor = (Odgovor)formatter.Deserialize(stream);
+
+            if (odgovor.Signal == Signal.UspesnaPretraga) return odgovor.ListaKlijenata;
+            else return null;
+        }
     }
 }

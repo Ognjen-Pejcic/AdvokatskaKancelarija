@@ -6,7 +6,6 @@ C:\Users\Ognjen\source\repos\AdvokatskaKancelarija\Domen\obj\Debug\Domen.dll
 C:\Users\Ognjen\source\repos\AdvokatskaKancelarija\Domen\obj\Debug\Domen.pdb
 C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Domen\bin\Debug\Domen.dll
 C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Domen\bin\Debug\Domen.pdb
-C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Domen\obj\Debug\Domen.csprojAssemblyReference.cache
 C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Domen\obj\Debug\Domen.csproj.CoreCompileInputs.cache
 C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Domen\obj\Debug\Domen.dll
 C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Domen\obj\Debug\Domen.pdb
@@ -16,3 +15,4 @@ C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Domen\obj\Debug\Domen.csp
 C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Domen\obj\Debug\Domen.csproj.CoreCompileInputs.cache
 C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Domen\obj\Debug\Domen.dll
 C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Domen\obj\Debug\Domen.pdb
+C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Domen\obj\Debug\Domen.csprojAssemblyReference.cache

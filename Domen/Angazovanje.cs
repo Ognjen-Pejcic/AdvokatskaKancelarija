@@ -27,6 +27,8 @@ namespace Domen
 
         public string Arhiviranje => throw new NotImplementedException();
 
+        public string UslovZaFiltriranje => throw new NotImplementedException();
+
         public List<DomenskiObjekat> GetEntities(SqlDataReader reader)
         {
             throw new NotImplementedException();
@@ -36,6 +38,10 @@ namespace Domen
         {
             throw new NotImplementedException();
         }
-       
+
+        public void PostaviVrednostiPretrage(string kriterijum, string text)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

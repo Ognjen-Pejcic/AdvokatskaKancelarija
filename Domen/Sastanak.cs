@@ -27,11 +27,13 @@ namespace Domen
         [Browsable(false)]
         public string JoinFull => $" s join advokat a on (s.advokatid = a.advokatid) join klijent k on (k.klijentid = s.klijentid)";
         [Browsable(false)]
-        public string KriterijumPretrage => $" datumvremesastanka = {DatumIVremeSastanka}";
+        public string KriterijumPretrage => $" SastanakID = {SastanakID}";
         [Browsable(false)]
         public string UpdateValues => throw new NotImplementedException();
         [Browsable(false)]
         public string Arhiviranje => throw new NotImplementedException();
+
+        public string UslovZaFiltriranje => throw new NotImplementedException();
 
         public List<DomenskiObjekat> GetEntities(SqlDataReader reader)
         {
@@ -77,6 +79,11 @@ namespace Domen
                 
             }
             return s;
+        }
+
+        public void PostaviVrednostiPretrage(string kriterijum, string text)
+        {
+            throw new NotImplementedException();
         }
     }
 }

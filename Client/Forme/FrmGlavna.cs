@@ -46,5 +46,11 @@ namespace Client.Forme
             UnosPredmetaFrm frm = new UnosPredmetaFrm();
             frm.ShowDialog();
         }
+
+        private void btnPretragaKlijenta_Click(object sender, EventArgs e)
+        {
+            FrmPretragaKlijenata frm = new FrmPretragaKlijenata();
+            frm.ShowDialog();
+        }
     }
 }

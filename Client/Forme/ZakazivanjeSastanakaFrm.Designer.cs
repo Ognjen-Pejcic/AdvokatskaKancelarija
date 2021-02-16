@@ -65,6 +65,7 @@ namespace Client.Forme
             // 
             // dgvSastanci
             // 
+            this.dgvSastanci.AllowUserToAddRows = false;
             this.dgvSastanci.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvSastanci.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSastanci.Location = new System.Drawing.Point(93, 195);
@@ -75,6 +76,7 @@ namespace Client.Forme
             // cbAdvokat
             // 
             this.cbAdvokat.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbAdvokat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAdvokat.FormattingEnabled = true;
             this.cbAdvokat.Location = new System.Drawing.Point(265, 32);
             this.cbAdvokat.Name = "cbAdvokat";
@@ -84,6 +86,7 @@ namespace Client.Forme
             // cbKlijent
             // 
             this.cbKlijent.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbKlijent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKlijent.FormattingEnabled = true;
             this.cbKlijent.Location = new System.Drawing.Point(265, 71);
             this.cbKlijent.Name = "cbKlijent";

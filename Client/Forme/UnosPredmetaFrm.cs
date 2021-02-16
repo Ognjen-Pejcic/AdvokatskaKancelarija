@@ -24,7 +24,7 @@ namespace Client.Forme
             cbKlijent.DataSource = Komunikacija.Instance.PrikaziKlijente();
             cbAdvokati.DataSource = Komunikacija.Instance.PrikaziAdvokate();
             cbVrsta.DataSource = Komunikacija.Instance.PrikaziVrste();
-
+            dgvAdvokati.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
         }
 
@@ -38,7 +38,7 @@ namespace Client.Forme
 
         private void btnSacuvaj_Click(object sender, EventArgs e)
         {
-            kontroler.Sacuvaj(cbKlijent.SelectedItem, txtNaziv.Text, dtpDatum.Value, chBArhiviran.Checked ? true :false , txtOpis.Text, cbFaza.SelectedItem, cbVrsta.SelectedItem);
+            kontroler.Sacuvaj(cbKlijent.SelectedItem, txtNaziv.Text, dtpDatum.Value, chBArhiviran.Checked , txtOpis.Text, cbFaza.SelectedItem, cbVrsta.SelectedItem);
         }
     }
 }

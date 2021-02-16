@@ -39,5 +39,10 @@ namespace Client
         {
             loginKontroler.Login(txtKorisnickoIMe.Text, txtLozinka.Text);
         }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -54,3 +54,5 @@ C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Client\obj\Debug\Client.c
 C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Client\obj\Debug\Client.csproj.CopyComplete
 C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Client\obj\Debug\Client.exe
 C:\Users\Ognjen\Desktop\projekat\AdvokatskaKancelarija\Client\obj\Debug\Client.pdb
+C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Client\obj\Debug\Client.Forme.FrmPretragaKlijenata.resources
+C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Client\obj\Debug\Client.Forme.PrikazKlijentaFRM.resources

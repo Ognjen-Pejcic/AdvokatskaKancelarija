@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -19,20 +20,25 @@ namespace Domen
         public string TelefonKlijenta { get; set; }
         public string AdresaKlijenta { get; set; }
 
+        [Browsable(false)]
         public string TableName => "Klijent";
-
+        [Browsable(false)]
         public string InsertValues => $"'{JMBGKlijenta}', '{ImeKlijenta}', '{Prezime}', '{TelefonKlijenta}', '{AdresaKlijenta}'";
 
-
+        [Browsable(false)]
         public string JoinCondition => throw new NotImplementedException();
-
+        [Browsable(false)]
         public string JoinFull => throw new NotImplementedException();
 
+
+        [Browsable(false)]
         public string KriterijumPretrage => $"klijentid = {KlijentID}";
-
+        [Browsable(false)]
         public string UpdateValues => $"Jmbgklijenta = '{JMBGKlijenta}', imeklijenta = '{ImeKlijenta}', prezimeklijenta = '{Prezime}', telefonklijenta = '{TelefonKlijenta}', adresaklijenta = '{AdresaKlijenta}'";
-
+        [Browsable(false)]
         public string Arhiviranje => throw new NotImplementedException();
+        [Browsable(false)]
+        public string UslovZaFiltriranje => $"JMBGKlijenta like '%'+'{JMBGKlijenta}'+'%' and imeklijenta like '%'+'{ImeKlijenta}'+'%' and prezimeklijenta like '%'+'{Prezime}'+'%' and adresaklijenta like '%'+'{AdresaKlijenta}'+'%' and telefonklijenta like '%'+'{TelefonKlijenta}'+'%'";
 
         public List<DomenskiObjekat> GetEntities(SqlDataReader reader)
         {
@@ -74,6 +80,20 @@ namespace Domen
         public override string ToString()
         {
             return ImeKlijenta + " " +Prezime;
+        }
+
+       
+        public void PostaviVrednostiPretrage(string kriterijum, string text)
+        {
+            //JMBG-u Imenu Prezimenu Adresi Telefonu
+            if (kriterijum == "JMBG-u") JMBGKlijenta = text;
+            else if (kriterijum == "Imenu") ImeKlijenta = text;
+            else if (kriterijum == "Prezimenu") Prezime = text;
+            else if (kriterijum == "Adresi") AdresaKlijenta = text;
+            else if (kriterijum == "Telefonu") TelefonKlijenta = text;
+            
+
+            
         }
     }
 }

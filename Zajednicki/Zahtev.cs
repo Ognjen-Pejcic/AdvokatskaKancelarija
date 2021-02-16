@@ -18,6 +18,9 @@ namespace Zajednicki
         public DomenskiObjekat DomenskiObjekat { get; set; }
         public Predmet Predmet { get; set; }
         public List<Angazovanje> Angazovanja { get; set; }
+        public string KriterijumPretrage { get; set; }
+        public string TekstPretrage { get; set; }
+        public int ID { get; set; }
     }
 
     public enum Operacija
@@ -29,6 +32,9 @@ namespace Zajednicki
         ZakaziSastanke,
         VratiVrste,
         VratiID,
-        DodajPredmet
+        DodajPredmet,
+        PretraziKlijente,
+        VratiKlijenta,
+        IzmeniKlijenta
     }
 }

@@ -37,6 +37,8 @@ namespace Domen
 
         public string Arhiviranje => "arhiviran = 'true'";
 
+        public string UslovZaFiltriranje => throw new NotImplementedException();
+
         public List<DomenskiObjekat> GetEntities(SqlDataReader reader)
         {
 
@@ -90,6 +92,11 @@ namespace Domen
 
             }
             return p;
+        }
+
+        public void PostaviVrednostiPretrage(string kriterijum, string text)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="ApstraknaGenerickaOperacija.cs" />
     <Compile Include="ArhivirajPredmetSO.cs" />
+    <Compile Include="IzmeniKlijentaSO.cs" />
     <Compile Include="NadjiKlijenteSO.cs" />
     <Compile Include="NadjiPredmeteSO.cs" />
     <Compile Include="NadjiSastankeSO.cs" />

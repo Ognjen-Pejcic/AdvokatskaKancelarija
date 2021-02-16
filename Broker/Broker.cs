@@ -71,20 +71,18 @@ namespace DbBroker
         {
             SqlCommand command = new SqlCommand("", connection, transaction);
             command.CommandText = $"SELECT max({domenskiObjekat.TableName}id) FROM {domenskiObjekat.TableName}";
-            Console.WriteLine(command.CommandText);
-            SqlDataReader reader = command.ExecuteReader();
-            int id = 0;
-            while (reader.Read())
-            {
-                
-                id = reader.GetInt32(0);
-            }
-            reader.Close();
-            return id; 
-            
+      //      Console.WriteLine(command.CommandText);
+     //       MessageBox.Show(command.CommandText);
+            object id= command.ExecuteScalar();
+
+
+            if (id == DBNull.Value)
+                return 1;
+
+            else return (int)id;
 
         }
-        public DomenskiObjekat VratiJedan(DomenskiObjekat domenskiObjekat)
+        public DomenskiObjekat Pronadji(DomenskiObjekat domenskiObjekat)
         {
             SqlCommand command = new SqlCommand("", connection, transaction);
             command.CommandText = $"SELECT * FROM {domenskiObjekat.TableName} where {domenskiObjekat.KriterijumPretrage}";
@@ -104,23 +102,24 @@ namespace DbBroker
             return rezultat;
 
         }
-        public List<DomenskiObjekat> Pronadji(DomenskiObjekat domenskiObjekat)
+        public List<DomenskiObjekat> Filtriraj(DomenskiObjekat domenskiObjekat)
         {
             SqlCommand command = new SqlCommand("", connection, transaction);
-            command.CommandText = $"SELECT * FROM {domenskiObjekat.TableName} where {domenskiObjekat.KriterijumPretrage}";
+            command.CommandText = $"SELECT * FROM {domenskiObjekat.TableName} where {domenskiObjekat.UslovZaFiltriranje}";
             SqlDataReader reader = command.ExecuteReader();
             List<DomenskiObjekat> rezultat = domenskiObjekat.GetEntities(reader);
             reader.Close();
             return rezultat;
 
         }
+    
 
-        public object Azuriraj(DomenskiObjekat domenskiObjekat)
+        public int Azuriraj(DomenskiObjekat domenskiObjekat)
         {
             SqlCommand command = new SqlCommand("", connection, transaction);
             command.CommandText = $"Update {domenskiObjekat.TableName} set {domenskiObjekat.UpdateValues} where {domenskiObjekat.KriterijumPretrage}";
             Console.WriteLine(command.CommandText);
-            object rez = command.ExecuteNonQuery();
+            int rez = command.ExecuteNonQuery();
             return rez;
         }
         public int Arhiviraj(DomenskiObjekat domenskiObjekat)

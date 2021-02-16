@@ -52,6 +52,18 @@
     <Compile Include="Forme\FrmGlavna.Designer.cs">
       <DependentUpon>FrmGlavna.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\FrmPretragaKlijenata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\FrmPretragaKlijenata.Designer.cs">
+      <DependentUpon>FrmPretragaKlijenata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\PrikazKlijentaFRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\PrikazKlijentaFRM.Designer.cs">
+      <DependentUpon>PrikazKlijentaFRM.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forme\UnosKlijentaFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +90,8 @@
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Kontroleri\DodajKlijentaKontroler.cs" />
+    <Compile Include="Kontroleri\PretragaKlijenataKontroler.cs" />
+    <Compile Include="Kontroleri\PrikazKlijentaKontroler.cs" />
     <Compile Include="Kontroleri\UnosPredmetaKontroler.cs" />
     <Compile Include="Kontroleri\LoginKontroler.cs" />
     <Compile Include="Kontroleri\ZakazivanjeSastanakaKontroler.cs" />
@@ -88,6 +102,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\FrmPretragaKlijenata.resx">
+      <DependentUpon>FrmPretragaKlijenata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\PrikazKlijentaFRM.resx">
+      <DependentUpon>PrikazKlijentaFRM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\UnosKlijentaFrm.resx">
       <DependentUpon>UnosKlijentaFrm.cs</DependentUpon>

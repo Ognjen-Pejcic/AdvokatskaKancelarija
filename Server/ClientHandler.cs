@@ -83,6 +83,23 @@ namespace Server
                             }
                             formatter.Serialize(stream, odgovor);
                             break;
+                        case Operacija.PretraziKlijente:
+                            odgovor.ListaKlijenata = Controller.Instance.NadjiKlijente(zahtev.KriterijumPretrage, zahtev.TekstPretrage, new Klijent());
+                            if (odgovor.ListaKlijenata.Count == 0) odgovor.Signal = Signal.NeuspesnaPretraga;
+                            else odgovor.Signal = Signal.UspesnaPretraga;
+                            formatter.Serialize(stream, odgovor);
+                            break;
+                        case Operacija.VratiKlijenta:
+                            odgovor.Klijent = Controller.Instance.UcitajKlijenta(new Klijent{ KlijentID = zahtev.ID });
+                            formatter.Serialize(stream, odgovor);
+                            break;
+                        case Operacija.IzmeniKlijenta:
+                            if (Controller.Instance.IzmeniKlijena(zahtev.Klijent))
+                            {
+                                odgovor.Signal = Signal.KlijentUspesnoIzmenjen;
+                            }
+                            formatter.Serialize(stream, odgovor);
+                            break;
                     }
                 }
             }

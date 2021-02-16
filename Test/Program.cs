@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using DbBroker;
 using Domen;
@@ -11,49 +12,58 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            Advokat a = new Advokat
-            {
-                AdvokatID=1,
-                ImeAdvokata= "b",
-                PrezimeAdovakta = "b",
-                TelefonaAdvokata = "asdasda123",
-                Specijalnost = "123",
-
-
-            };
-           
-            Predmet p = new Predmet
-            {
-                PredmetID = 2,
-                Klijent = new Klijent
-                {
-                    KlijentID = 1
-                },
-
-                DatumOtvaranja = DateTime.Parse("1/23/2021"),
-                OpisPredmeta = ":Saa,sjdbaskdbhaskdhasd",
-                Faza = "asdasd",
-                VrstaPostupka = new VrstaPostupka
-                {
-                    VrstaPostupkaID = 1
-                },
-                Arhiviran = false,
-                NazivPremdeta = "jeste"
-
-            };
-           
-            Broker b = new Broker();
-            //b.OpenConnection();
-            //if (b.Sacuvaj(p) == 1)
-            //    Console.WriteLine("232ebwh");
-            //b.CloseConnection();
-            b.OpenConnection();
-            //List<DomenskiObjekat> o = b.Pronadji(p);
-            //foreach (Predmet aa in o)
+            //Advokat a = new Advokat
             //{
-            //    Console.WriteLine(aa.NazivPremdeta);
+            //    AdvokatID=1,
+            //    ImeAdvokata= "b",
+            //    PrezimeAdovakta = "b",
+            //    TelefonaAdvokata = "asdasda123",
+            //    Specijalnost = "123",
+
+
+            //};
+
+            //Predmet p = new Predmet
+            //{
+            //    PredmetID = 2,
+            //    Klijent = new Klijent
+            //    {
+            //        KlijentID = 1
+            //    },
+
+            //    DatumOtvaranja = DateTime.Parse("1/23/2021"),
+            //    OpisPredmeta = ":Saa,sjdbaskdbhaskdhasd",
+            //    Faza = "asdasd",
+            //    VrstaPostupka = new VrstaPostupka
+            //    {
+            //        VrstaPostupkaID = 1
+            //    },
+            //    Arhiviran = false,
+            //    NazivPremdeta = "jeste"
+
+            //};
+
+            Broker b = new Broker();
+            b.OpenConnection();
+            Klijent k = new Klijent
+            {
+                ImeKlijenta = "O"
+            };
+            List<DomenskiObjekat> o = b.Filtriraj(k);
+            foreach (Klijent aa in o)
+            {
+                Console.WriteLine(aa.ImeKlijenta);
+            }
+            //Console.WriteLine(b.VratiMaxID(a));
+
+            //Regex r = new Regex("^(0[1-9]|[1-2][0-9]|3[0-1])(0[1-9]|1[0-2])[0-9]{9}$");
+            //if (r.IsMatch("333333333333333"))
+            //{
+            //    Console.WriteLine("jeste");
             //}
-            Console.WriteLine(b.VratiMaxID(a));
+            //else {
+            //    Console.WriteLine("nije");
+            //}
 
         }
     }

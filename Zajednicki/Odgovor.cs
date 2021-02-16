@@ -16,6 +16,9 @@ namespace Zajednicki
         public List<Klijent> ListaKlijenata { get; set; }
         public List<VrstaPostupka> ListaVrsta { get; set; }
         public int ID { get; set; }
+        public Klijent Klijent { get; set; }
+        public Sastanak Sastanak{ get; set; }
+        public Predmet Predmet{ get; set; }
     }
 
     public enum Signal
@@ -23,6 +26,9 @@ namespace Zajednicki
         UspesnoPrijavljen,
         KlijentUspesnoDodat,
         SastanciUspesnoZakazani,
-        PredmetUspesnoDodat
+        PredmetUspesnoDodat,
+        NeuspesnaPretraga,
+        UspesnaPretraga,
+        KlijentUspesnoIzmenjen
     }
 }

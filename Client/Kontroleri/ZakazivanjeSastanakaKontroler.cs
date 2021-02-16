@@ -14,13 +14,31 @@ namespace Client.Kontroleri
         public BindingList<Sastanak> sastanci = new BindingList<Sastanak>();
         internal void Dodaj(object advokat, object klijent, DateTime datumVreme)
         {
+            if(advokat==null || klijent == null)
+            {
+                MessageBox.Show("Svi podaci su obavezni");
+                return;
+            }
+            if (datumVreme < DateTime.Now)
+            {
+                MessageBox.Show("Ne mozete da zakazete sastanak u proslom terminu");
+                return;
+            }
+            foreach (Sastanak s in sastanci)
+            {
+                if (s.Advokat == advokat && s.Klijent == klijent && s.DatumIVremeSastanka == datumVreme)
+                {
+                    MessageBox.Show("Sastanak sa ovim podacima ste vec uneli");
+                    return;
+                }
+               
+            }
             sastanci.Add(new Sastanak
             {
                 Advokat = (Advokat)advokat,
                 Klijent = (Klijent)klijent,
                 DatumIVremeSastanka = datumVreme
             });
-            
         }
 
         internal void Sacuvaj()
