@@ -11,7 +11,7 @@ namespace Domen
     {
         string TableName { get; }
         string InsertValues { get; }
-     //   string PovratneVrednosti { get; }
+        string PovratneVrednosti { get; }
         string JoinCondition { get; }
         string JoinFull { get; }
        

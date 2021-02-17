@@ -59,3 +59,4 @@ C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Client\obj\Debug
 C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Client\obj\Debug\Client.Forme.PretragaPredmetaFrm.resources
 C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Client\obj\Debug\Client.Forme.PrikazPredmetaFrm.resources
 C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Client\obj\Debug\Client.Forme.PretragaSastanakaFrm.resources
+C:\Users\Ognjen\Desktop\Softveri projekat\AdvokatskaKancelarija\Client\obj\Debug\Client.Forme.PrikazSastankaFrm.resources

@@ -39,6 +39,8 @@ namespace Zajednicki
         IzmeniKlijenta,
         PretraziPredmete,
         ArhivirajPredmet,
-        PretraziSastanke
+        PretraziSastanke,
+        VratiPredmet,
+        VratiSastanak
     }
 }

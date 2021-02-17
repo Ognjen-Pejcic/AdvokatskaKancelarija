@@ -74,8 +74,8 @@ namespace Client.Kontroleri
 
             try { 
                Predmet predmet = (Predmet)o;
-
-                PrikazPredmetaFrm frm = new PrikazPredmetaFrm(predmet.PredmetID);
+                Predmet p = Komunikacija.Instance.VratiPremdet(predmet.PredmetID);
+                PrikazPredmetaFrm frm = new PrikazPredmetaFrm(predmet.PredmetID, predmet.Klijent, predmet.DatumOtvaranja, predmet.Arhiviran, predmet.NazivPremdeta, predmet.OpisPredmeta, predmet.VrstaPostupka, predmet.Faza);
                 frm.ShowDialog();
             }
             catch

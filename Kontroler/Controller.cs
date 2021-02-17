@@ -108,7 +108,7 @@ namespace Kontroler
 
         public Sastanak UcitajSastanak(Sastanak sastanak)
         {
-            ApstraknaGenerickaOperacija operacija = new UcitajKlijentaSO();
+            ApstraknaGenerickaOperacija operacija = new UcitajSastanakSO();
             return (Sastanak)operacija.ExecuteSO(sastanak);
         }
         public Predmet UcitajPredmet(Predmet predmet)

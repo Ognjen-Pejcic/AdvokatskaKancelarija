@@ -33,7 +33,11 @@ namespace Domen
         [Browsable(false)]
         public string Arhiviranje => throw new NotImplementedException();
 
-        public string UslovZaFiltriranje => throw new NotImplementedException();
+        [Browsable(false)]
+        //$"(k.ImeKlijenta like '%'+'{Klijent.ImeKlijenta}'+'%' and p.nazivpredmeta like '%'+'{NazivPremdeta}'+'%' and p.opispredmeta like '%'+'{OpisPredmeta}'+'%' and p.faza like '%'+'{Faza}'+'%' and v.nazivvrstepostupka like '%'+'{VrstaPostupka.NazivVrste}'+'%') and 0 = (case when YEAR('{DatumOtvaranja}')=1 then 0 else datediff(day, p.datumotvaranja, '{DatumOtvaranja}')end) ";
+        public string UslovZaFiltriranje => $"(concat(a.imeadvokata, concat(' ', a.prezimeadvokata)) like '%'+'{Advokat.ImeAdvokata}'+'%' and concat(k.imeklijenta, concat(' ', k.prezimeklijenta)) like '%'+'{Klijent.ImeKlijenta}'+'%') and 0 = (case when YEAR('{DatumIVremeSastanka}')=1 then 0 else datediff(day, s.datumvreme, '{DatumIVremeSastanka}')end) ";
+        [Browsable(false)]
+        public string PovratneVrednosti => " s.sastanakid, s.datumvreme, concat(a.imeadvokata, concat(' ', a.prezimeadvokata)) as 'Advokat', concat(k.imeklijenta, concat(' ', k.prezimeklijenta)) as 'Klijnet'  ";
 
         public List<DomenskiObjekat> GetEntities(SqlDataReader reader)
         {
@@ -46,11 +50,11 @@ namespace Domen
                     DatumIVremeSastanka = reader.GetDateTime(1),
                     Advokat = new Advokat
                     {
-                        AdvokatID = reader.GetInt32(2)
+                        ImeAdvokata = reader.GetString(2)
                     },
                     Klijent = new Klijent
                     {
-                        KlijentID =  reader.GetInt32(3)
+                        ImeKlijenta =  reader.GetString(3)
                     }
 
                 };
@@ -68,11 +72,12 @@ namespace Domen
                 s.DatumIVremeSastanka = reader.GetDateTime(1);
                 s.Advokat = new Advokat
                 {
-                    AdvokatID = reader.GetInt32(2)
+                    ImeAdvokata = reader.GetString(2)
+
                 };
                 s.Klijent = new Klijent
                 {
-                    KlijentID = reader.GetInt32(3)
+                    ImeKlijenta = reader.GetString(3)
                 };
 
                 

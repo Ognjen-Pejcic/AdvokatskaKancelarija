@@ -117,8 +117,16 @@ namespace Server
                             break;
                         case Operacija.PretraziSastanke:
                             odgovor.ListaSastanaka = Controller.Instance.NadjiSastanke(zahtev.KriterijumPretrage, zahtev.TekstPretrage, zahtev.Datum, new Sastanak());
-                            if (odgovor.ListaPredmeta.Count == 0) odgovor.Signal = Signal.NeuspesnaPretraga;
+                            if (odgovor.ListaSastanaka.Count == 0) odgovor.Signal = Signal.NeuspesnaPretraga;
                             else odgovor.Signal = Signal.UspesnaPretraga;
+                            formatter.Serialize(stream, odgovor);
+                            break;
+                        case Operacija.VratiPredmet:
+                            odgovor.Predmet = Controller.Instance.UcitajPredmet(new Predmet { PredmetID = zahtev.ID});
+                            formatter.Serialize(stream, odgovor);
+                            break;
+                        case Operacija.VratiSastanak:
+                            odgovor.Sastanak = Controller.Instance.UcitajSastanak(new Sastanak { SastanakID = zahtev.ID });
                             formatter.Serialize(stream, odgovor);
                             break;
                     }
@@ -126,7 +134,7 @@ namespace Server
             }
             catch(Exception e)
             {
-               // MessageBox.Show(e.Message);
+               MessageBox.Show(e.Message);
             }
         }
     }

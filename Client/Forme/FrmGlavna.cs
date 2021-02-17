@@ -61,7 +61,8 @@ namespace Client.Forme
 
         private void btnPretragaSastanaka_Click(object sender, EventArgs e)
         {
-
+            PretragaSastanakaFrm frm = new PretragaSastanakaFrm();
+            frm.ShowDialog();
         }
     }
 }

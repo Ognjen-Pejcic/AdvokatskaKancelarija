@@ -39,6 +39,8 @@ namespace Domen
         public string Arhiviranje => throw new NotImplementedException();
         [Browsable(false)]
         public string UslovZaFiltriranje => $"JMBGKlijenta like '%'+'{JMBGKlijenta}'+'%' and imeklijenta like '%'+'{ImeKlijenta}'+'%' and prezimeklijenta like '%'+'{Prezime}'+'%' and adresaklijenta like '%'+'{AdresaKlijenta}'+'%' and telefonklijenta like '%'+'{TelefonKlijenta}'+'%'";
+        [Browsable(false)]
+        public string PovratneVrednosti => " * ";
 
         public List<DomenskiObjekat> GetEntities(SqlDataReader reader)
         {

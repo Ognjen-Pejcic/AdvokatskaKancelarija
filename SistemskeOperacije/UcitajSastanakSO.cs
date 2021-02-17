@@ -12,7 +12,7 @@ namespace SistemskeOperacije
         protected override object Execute(DomenskiObjekat domenskiObjekat)
         {
             Sastanak sastanak = (Sastanak)domenskiObjekat;
-            return broker.Pronadji(sastanak);
+            return broker.VratiJedanJoin(sastanak);
         }
 
         protected override object Execute(List<DomenskiObjekat> domenskiObjekat)

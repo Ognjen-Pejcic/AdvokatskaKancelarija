@@ -68,8 +68,7 @@ namespace Client
             }
         }
 
-        
-
+      
         internal bool IzmeniKlienta(Klijent klijent)
         {
             Zahtev zahtev = new Zahtev();
@@ -84,10 +83,17 @@ namespace Client
             return false;
         }
 
-        internal Predmet PrikaziPredmet(int predmetID)
+        internal Predmet VratiPremdet(int predmetID)
         {
-            throw new NotImplementedException();
+            Zahtev zahtev = new Zahtev();
+            zahtev.Operacija = Operacija.VratiPredmet;
+            zahtev.ID = predmetID;
+            formatter.Serialize(stream, zahtev);
+            Odgovor odgovor = (Odgovor)formatter.Deserialize(stream);
+            return odgovor.Predmet;
         }
+
+
 
         internal List<VrstaPostupka> PrikaziVrste()
         {
@@ -112,6 +118,16 @@ namespace Client
             else return false;
         }
 
+        internal Sastanak VratiSastanak(int sastanakID)
+        {
+            Zahtev zahtev = new Zahtev();
+            zahtev.Operacija = Operacija.VratiSastanak;
+            zahtev.ID = sastanakID;
+            formatter.Serialize(stream, zahtev);
+            Odgovor odgovor = (Odgovor)formatter.Deserialize(stream);
+            return odgovor.Sastanak;
+        }
+
         internal Klijent PrikaziKlijenta(int id)
         {
             Zahtev zahtev = new Zahtev();
@@ -121,6 +137,7 @@ namespace Client
             Odgovor odgovor = (Odgovor)formatter.Deserialize(stream);
             return odgovor.Klijent;
         }
+       
 
         internal int VratiMaxID(DomenskiObjekat domenskiObjekat)
         {

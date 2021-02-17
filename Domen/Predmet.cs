@@ -21,7 +21,7 @@ namespace Domen
         public string OpisPredmeta { get; set; }
 
         public string Faza { get; set; }
-        public List<Angazovanje> angazovanja { get; set; }
+        public List<Angazovanje> Angazovanja { get; set; }
         public VrstaPostupka VrstaPostupka { get; set; }
 
         [Browsable(false)]
@@ -37,7 +37,7 @@ namespace Domen
         public string JoinFull => "p join klijent k on(k.klijentid = p.klijentid) join vrstapostupka v on (v.vrstapostupkaID = p.vrstaPostupkaID) ";
 
         [Browsable(false)]
-        public string KriterijumPretrage => $"predmetid = {PredmetID}";
+        public string KriterijumPretrage => $"p.predmetid = {PredmetID}";
         [Browsable(false)]
         public string UpdateValues => $"klijentid = {Klijent.KlijentID}, nazivpredmeta ='{NazivPremdeta}', datumotvaranja = '{DatumOtvaranja}', arhiviran = '{Arhiviran}', opispredmeta = '{OpisPredmeta}', faza ='{Faza}', vrstapostupkaid = {VrstaPostupka.VrstaPostupkaID}";
 
@@ -48,6 +48,8 @@ namespace Domen
         [Browsable(false)]
         //CONVERT(VARCHAR(10),p.DatumOtvaranja,120) = '{DatumOtvaranja.Date}' "
         public string UslovZaFiltriranje => $"(k.ImeKlijenta like '%'+'{Klijent.ImeKlijenta}'+'%' and p.nazivpredmeta like '%'+'{NazivPremdeta}'+'%' and p.opispredmeta like '%'+'{OpisPredmeta}'+'%' and p.faza like '%'+'{Faza}'+'%' and v.nazivvrstepostupka like '%'+'{VrstaPostupka.NazivVrste}'+'%') and 0 = (case when YEAR('{DatumOtvaranja}')=1 then 0 else datediff(day, p.datumotvaranja, '{DatumOtvaranja}')end) ";
+        [Browsable(false)]
+        public string PovratneVrednosti => " * ";
 
         public List<DomenskiObjekat> GetEntities(SqlDataReader reader)
         {

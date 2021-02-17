@@ -46,8 +46,11 @@ namespace Test
 
             Broker b = new Broker();
             b.OpenConnection();
-            Predmet k = new Predmet();
-            Console.WriteLine(k.DatumOtvaranja);
+            List<DomenskiObjekat> s = b.VratiSveJoinWhere(new Sastanak());
+            foreach(Sastanak ss in s)
+            {
+                Console.WriteLine(ss.DatumIVremeSastanka + "  " + ss.Advokat.ImeAdvokata + "  " + ss.Klijent.ImeKlijenta);
+            }
             //{
             //    DatumOtvaranja = DateTime.ParseExact("02/02/2021", "MM/dd/yyyy", CultureInfo.InvariantCulture), 
             //    Klijent =  new Klijent(),

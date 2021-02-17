@@ -60,7 +60,8 @@ namespace DbBroker
         public List<DomenskiObjekat> VratiSve(DomenskiObjekat domenskiObjekat)
         {
             SqlCommand command = new SqlCommand("", connection, transaction);
-            command.CommandText = $"SELECT * FROM {domenskiObjekat.TableName}";
+            command.CommandText = $"SELECT {domenskiObjekat.PovratneVrednosti}  FROM {domenskiObjekat.TableName}";
+            Console.WriteLine(command.CommandText);
             SqlDataReader reader = command.ExecuteReader();
             List<DomenskiObjekat> rezultat = domenskiObjekat.GetEntities(reader);
             reader.Close();
@@ -94,10 +95,21 @@ namespace DbBroker
         public List<DomenskiObjekat> VratiSveJoinWhere(DomenskiObjekat domenskiObjekat)
         {
             SqlCommand command = new SqlCommand("", connection, transaction);
-            command.CommandText = $"SELECT * FROM {domenskiObjekat.TableName} {domenskiObjekat.JoinFull} where {domenskiObjekat.UslovZaFiltriranje}";
+            command.CommandText = $"SELECT {domenskiObjekat.PovratneVrednosti} FROM {domenskiObjekat.TableName} {domenskiObjekat.JoinFull} where {domenskiObjekat.UslovZaFiltriranje}";
             Console.Write(command.CommandText);
             SqlDataReader reader = command.ExecuteReader();
             List<DomenskiObjekat> rezultat = domenskiObjekat.GetEntities(reader);
+            reader.Close();
+            return rezultat;
+
+        }
+        public DomenskiObjekat VratiJedanJoin(DomenskiObjekat domenskiObjekat)
+        {
+            SqlCommand command = new SqlCommand("", connection, transaction);
+            command.CommandText = $"SELECT {domenskiObjekat.PovratneVrednosti} FROM {domenskiObjekat.TableName} {domenskiObjekat.JoinFull} where {domenskiObjekat.KriterijumPretrage}";
+            Console.Write(command.CommandText);
+            SqlDataReader reader = command.ExecuteReader();
+            DomenskiObjekat rezultat = domenskiObjekat.GetEntity(reader);
             reader.Close();
             return rezultat;
 

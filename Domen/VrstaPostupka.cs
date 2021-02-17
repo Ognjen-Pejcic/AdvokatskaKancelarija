@@ -26,6 +26,8 @@ namespace Domen
 
         public string UslovZaFiltriranje => throw new NotImplementedException();
 
+        public string PovratneVrednosti => " * ";
+
         public List<DomenskiObjekat> GetEntities(SqlDataReader reader)
         {
             List<DomenskiObjekat> list = new List<DomenskiObjekat>();

@@ -45,6 +45,8 @@ namespace Domen
         public string Arhiviranje => throw new NotImplementedException();
         [Browsable(false)]
         public string UslovZaFiltriranje => throw new NotImplementedException();
+        [Browsable(false)]
+        public string PovratneVrednosti => " * ";
 
         public List<DomenskiObjekat> GetEntities(SqlDataReader reader)
         {
