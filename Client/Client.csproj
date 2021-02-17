@@ -58,11 +58,29 @@
     <Compile Include="Forme\FrmPretragaKlijenata.Designer.cs">
       <DependentUpon>FrmPretragaKlijenata.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\PretragaPredmetaFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\PretragaPredmetaFrm.Designer.cs">
+      <DependentUpon>PretragaPredmetaFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\PretragaSastanakaFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\PretragaSastanakaFrm.Designer.cs">
+      <DependentUpon>PretragaSastanakaFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forme\PrikazKlijentaFRM.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forme\PrikazKlijentaFRM.Designer.cs">
       <DependentUpon>PrikazKlijentaFRM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\PrikazPredmetaFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\PrikazPredmetaFrm.Designer.cs">
+      <DependentUpon>PrikazPredmetaFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forme\UnosKlijentaFrm.cs">
       <SubType>Form</SubType>
@@ -91,6 +109,8 @@
     </Compile>
     <Compile Include="Kontroleri\DodajKlijentaKontroler.cs" />
     <Compile Include="Kontroleri\PretragaKlijenataKontroler.cs" />
+    <Compile Include="Kontroleri\PretragaPredmetaKontroler.cs" />
+    <Compile Include="Kontroleri\PretragaSastanakaKontroler.cs" />
     <Compile Include="Kontroleri\PrikazKlijentaKontroler.cs" />
     <Compile Include="Kontroleri\UnosPredmetaKontroler.cs" />
     <Compile Include="Kontroleri\LoginKontroler.cs" />
@@ -106,8 +126,17 @@
     <EmbeddedResource Include="Forme\FrmPretragaKlijenata.resx">
       <DependentUpon>FrmPretragaKlijenata.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forme\PretragaPredmetaFrm.resx">
+      <DependentUpon>PretragaPredmetaFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\PretragaSastanakaFrm.resx">
+      <DependentUpon>PretragaSastanakaFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forme\PrikazKlijentaFRM.resx">
       <DependentUpon>PrikazKlijentaFRM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\PrikazPredmetaFrm.resx">
+      <DependentUpon>PrikazPredmetaFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\UnosKlijentaFrm.resx">
       <DependentUpon>UnosKlijentaFrm.cs</DependentUpon>

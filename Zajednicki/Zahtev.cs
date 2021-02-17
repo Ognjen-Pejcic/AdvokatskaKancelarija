@@ -21,6 +21,7 @@ namespace Zajednicki
         public string KriterijumPretrage { get; set; }
         public string TekstPretrage { get; set; }
         public int ID { get; set; }
+        public DateTime Datum { get; set; }
     }
 
     public enum Operacija
@@ -35,6 +36,9 @@ namespace Zajednicki
         DodajPredmet,
         PretraziKlijente,
         VratiKlijenta,
-        IzmeniKlijenta
+        IzmeniKlijenta,
+        PretraziPredmete,
+        ArhivirajPredmet,
+        PretraziSastanke
     }
 }

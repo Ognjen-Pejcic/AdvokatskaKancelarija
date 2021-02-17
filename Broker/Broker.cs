@@ -91,10 +91,10 @@ namespace DbBroker
             reader.Close();
             return rezultat;
         }
-        public List<DomenskiObjekat> VratiSveJoin(DomenskiObjekat domenskiObjekat)
+        public List<DomenskiObjekat> VratiSveJoinWhere(DomenskiObjekat domenskiObjekat)
         {
             SqlCommand command = new SqlCommand("", connection, transaction);
-            command.CommandText = $"SELECT * FROM {domenskiObjekat.TableName} {domenskiObjekat.JoinFull}";
+            command.CommandText = $"SELECT * FROM {domenskiObjekat.TableName} {domenskiObjekat.JoinFull} where {domenskiObjekat.UslovZaFiltriranje}";
             Console.Write(command.CommandText);
             SqlDataReader reader = command.ExecuteReader();
             List<DomenskiObjekat> rezultat = domenskiObjekat.GetEntities(reader);

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -45,15 +46,19 @@ namespace Test
 
             Broker b = new Broker();
             b.OpenConnection();
-            Klijent k = new Klijent
-            {
-                ImeKlijenta = "O"
-            };
-            List<DomenskiObjekat> o = b.Filtriraj(k);
-            foreach (Klijent aa in o)
-            {
-                Console.WriteLine(aa.ImeKlijenta);
-            }
+            Predmet k = new Predmet();
+            Console.WriteLine(k.DatumOtvaranja);
+            //{
+            //    DatumOtvaranja = DateTime.ParseExact("02/02/2021", "MM/dd/yyyy", CultureInfo.InvariantCulture), 
+            //    Klijent =  new Klijent(),
+            //    VrstaPostupka = new VrstaPostupka()
+            //};
+            
+            //List<DomenskiObjekat> o = b.VratiSveJoinWhere(k);
+            //foreach (Predmet aa in o)
+            //{
+            //    Console.WriteLine(aa.NazivPremdeta);
+            //}
             //Console.WriteLine(b.VratiMaxID(a));
 
             //Regex r = new Regex("^(0[1-9]|[1-2][0-9]|3[0-1])(0[1-9]|1[0-2])[0-9]{9}$");

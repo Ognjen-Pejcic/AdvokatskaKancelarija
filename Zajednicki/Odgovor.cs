@@ -19,6 +19,8 @@ namespace Zajednicki
         public Klijent Klijent { get; set; }
         public Sastanak Sastanak{ get; set; }
         public Predmet Predmet{ get; set; }
+        public List<Predmet> ListaPredmeta { get; set; }
+        public List<Sastanak> ListaSastanaka { get; set; }
     }
 
     public enum Signal
@@ -29,6 +31,7 @@ namespace Zajednicki
         PredmetUspesnoDodat,
         NeuspesnaPretraga,
         UspesnaPretraga,
-        KlijentUspesnoIzmenjen
+        KlijentUspesnoIzmenjen,
+        PredmetUspesnoArhiviran
     }
 }

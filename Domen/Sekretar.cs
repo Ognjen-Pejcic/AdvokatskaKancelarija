@@ -57,5 +57,10 @@ namespace Domen
         {
             throw new NotImplementedException();
         }
+
+        public void PostaviVrednostiPretrage(string kriterijum, string text, DateTime datum)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

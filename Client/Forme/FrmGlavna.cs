@@ -52,5 +52,16 @@ namespace Client.Forme
             FrmPretragaKlijenata frm = new FrmPretragaKlijenata();
             frm.ShowDialog();
         }
+
+        private void btnPretragaPredmeta_Click(object sender, EventArgs e)
+        {
+            PretragaPredmetaFrm frm = new PretragaPredmetaFrm();
+            frm.ShowDialog();
+        }
+
+        private void btnPretragaSastanaka_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

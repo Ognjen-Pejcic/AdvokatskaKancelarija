@@ -15,6 +15,9 @@ namespace Client
     {
         private static Komunikacija instance;
         private Socket klijentskiSoket;
+
+        
+
         private NetworkStream stream;
         private BinaryFormatter formatter =  new BinaryFormatter();
         public static Komunikacija Instance
@@ -25,6 +28,47 @@ namespace Client
                 return instance;
             }
         }
+
+        internal bool Login(string korisnickoime, string lozinka)
+        {
+            Zahtev zahtev = new Zahtev();
+            zahtev.Operacija = Operacija.Login;
+            zahtev.Sekretar = new Sekretar
+            {
+                KorisnickoIme = korisnickoime,
+                Lozinka = lozinka
+            };
+            formatter.Serialize(stream, zahtev);
+            Odgovor odgovor = (Odgovor)formatter.Deserialize(stream);
+            if (odgovor.Signal == Signal.UspesnoPrijavljen)
+            {
+                return true;
+            }
+            return false;
+        }
+
+  
+
+        internal bool Connect()
+        {
+            try
+            {
+                if (klijentskiSoket == null || !klijentskiSoket.Connected)
+                {
+                    klijentskiSoket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                    klijentskiSoket.Connect("localhost", 9000);
+                    stream = new NetworkStream(klijentskiSoket);
+
+                }
+                return true;
+            }
+            catch (SocketException)
+            {
+                return false;
+            }
+        }
+
+        
 
         internal bool IzmeniKlienta(Klijent klijent)
         {
@@ -40,6 +84,11 @@ namespace Client
             return false;
         }
 
+        internal Predmet PrikaziPredmet(int predmetID)
+        {
+            throw new NotImplementedException();
+        }
+
         internal List<VrstaPostupka> PrikaziVrste()
         {
             Zahtev zahtev = new Zahtev();
@@ -47,6 +96,20 @@ namespace Client
             formatter.Serialize(stream, zahtev);
             Odgovor odgovor = (Odgovor)formatter.Deserialize(stream);
             return odgovor.ListaVrsta;
+        }
+
+        internal bool ArhivirajPredmet(Predmet predmet)
+        {
+            Zahtev zahtev = new Zahtev();
+            zahtev.Operacija = Operacija.ArhivirajPredmet;
+            zahtev.Predmet = predmet;
+            formatter.Serialize(stream, zahtev);
+            Odgovor odgovor = (Odgovor)formatter.Deserialize(stream);
+            if (odgovor.Signal == Signal.PredmetUspesnoArhiviran)
+            {
+                return true;
+            }
+            else return false;
         }
 
         internal Klijent PrikaziKlijenta(int id)
@@ -130,42 +193,7 @@ namespace Client
             return false;
         }
 
-        internal bool Login(string korisnickoime, string lozinka)
-        {
-            Zahtev zahtev = new Zahtev();
-            zahtev.Operacija = Operacija.Login;
-            zahtev.Sekretar = new Sekretar
-            {
-                KorisnickoIme = korisnickoime,
-                Lozinka = lozinka
-            };
-            formatter.Serialize(stream, zahtev);
-            Odgovor odgovor = (Odgovor)formatter.Deserialize(stream);
-            if(odgovor.Signal == Signal.UspesnoPrijavljen)
-            {
-                return true;
-            }
-            return false;
-        }
-
-        internal bool Connect()
-        {
-            try
-            {
-                if(klijentskiSoket ==null || !klijentskiSoket.Connected)
-                {
-                    klijentskiSoket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                    klijentskiSoket.Connect("localhost", 9000);
-                    stream = new NetworkStream(klijentskiSoket);
-                    
-                }
-                return true;
-            }
-            catch (SocketException)
-            {
-                return false;
-            }
-        }
+      
 
         internal List<Klijent> VratiKlijente(string kriterijum, string text)
         {
@@ -179,5 +207,55 @@ namespace Client
             if (odgovor.Signal == Signal.UspesnaPretraga) return odgovor.ListaKlijenata;
             else return null;
         }
+        internal List<Predmet> VratiPredmete(string kriterijum, string text)
+        {
+
+            Zahtev zahtev = new Zahtev();
+            zahtev.Operacija = Operacija.PretraziPredmete;
+            zahtev.KriterijumPretrage = kriterijum;
+            zahtev.TekstPretrage = text;
+            formatter.Serialize(stream, zahtev);
+            Odgovor odgovor = (Odgovor)formatter.Deserialize(stream);
+
+            if (odgovor.Signal == Signal.UspesnaPretraga) return odgovor.ListaPredmeta;
+            else return null;
+        }
+        internal List<Predmet> VratiPredmete(string kriterijum, DateTime datum)
+        {
+            Zahtev zahtev = new Zahtev();
+            zahtev.Operacija = Operacija.PretraziPredmete;
+            zahtev.KriterijumPretrage = kriterijum;
+            zahtev.Datum = datum;
+            formatter.Serialize(stream, zahtev);
+            Odgovor odgovor = (Odgovor)formatter.Deserialize(stream);
+
+            if (odgovor.Signal == Signal.UspesnaPretraga) return odgovor.ListaPredmeta;
+            else return null;
+        }
+        internal List<Sastanak> VratiSastanke(string kriterijum, string text)
+        {
+            Zahtev zahtev = new Zahtev();
+            zahtev.Operacija = Operacija.PretraziSastanke;
+            zahtev.KriterijumPretrage = kriterijum;
+            zahtev.TekstPretrage = text;
+            formatter.Serialize(stream, zahtev);
+            Odgovor odgovor = (Odgovor)formatter.Deserialize(stream);
+
+            if (odgovor.Signal == Signal.UspesnaPretraga) return odgovor.ListaSastanaka;
+            else return null;
+        }
+        internal List<Sastanak> VratiSastanke(string kriterijum, DateTime datum)
+        {
+            Zahtev zahtev = new Zahtev();
+            zahtev.Operacija = Operacija.PretraziSastanke;
+            zahtev.KriterijumPretrage = kriterijum;
+            zahtev.Datum = datum;
+            formatter.Serialize(stream, zahtev);
+            Odgovor odgovor = (Odgovor)formatter.Deserialize(stream);
+
+            if (odgovor.Signal == Signal.UspesnaPretraga) return odgovor.ListaSastanaka;
+            else return null;
+        }
+
     }
 }

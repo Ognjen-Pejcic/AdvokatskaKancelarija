@@ -41,9 +41,9 @@ namespace Domen
 
         public string UpdateValues => throw new NotImplementedException();
         [Browsable(false)]
-
+      
         public string Arhiviranje => throw new NotImplementedException();
-
+        [Browsable(false)]
         public string UslovZaFiltriranje => throw new NotImplementedException();
 
         public List<DomenskiObjekat> GetEntities(SqlDataReader reader)
@@ -70,6 +70,11 @@ namespace Domen
         }
 
         public void PostaviVrednostiPretrage(string kriterijum, string text)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void PostaviVrednostiPretrage(string kriterijum, string text, DateTime datum)
         {
             throw new NotImplementedException();
         }

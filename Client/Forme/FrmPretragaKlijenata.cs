@@ -21,11 +21,6 @@ namespace Client.Forme
             InitializeComponent();
         }
 
-        private void textBox1_KeyUp(object sender, KeyEventArgs e)
-        {
-            
-        }
-
         private void btnPrikazi_Click(object sender, EventArgs e)
         {
             if (dgvRezultat.SelectedRows.Count > 0) { 

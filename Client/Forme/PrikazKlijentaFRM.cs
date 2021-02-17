@@ -48,6 +48,7 @@ namespace Client.Forme
             txtPrezime.Text = prezime;
             txtAdresa.Text = adresaKlijenta;
             txtTelefon.Text = telefonKlijenta;
+            MessageBox.Show("Sistem je ucitao klijenta");
         }
 
         private void btnIzmeni_Click(object sender, EventArgs e)

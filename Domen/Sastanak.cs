@@ -81,9 +81,23 @@ namespace Domen
             return s;
         }
 
-        public void PostaviVrednostiPretrage(string kriterijum, string text)
+    
+
+        public void PostaviVrednostiPretrage(string kriterijum, string text, DateTime datum)
         {
-            throw new NotImplementedException();
+            //Klijentu Advokatu Datumu
+            this.Klijent = new Klijent();
+            this.Advokat = new Advokat();
+            if (kriterijum == "Klijentu")
+            {
+                this.Klijent.ImeKlijenta = text;
+            }
+
+            else if (kriterijum == "Advokatu")
+            {
+                this.Advokat.ImeAdvokata = text;
+            }
+            else this.DatumIVremeSastanka = datum;
         }
     }
 }

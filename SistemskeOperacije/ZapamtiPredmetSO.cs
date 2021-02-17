@@ -26,11 +26,11 @@ namespace SistemskeOperacije
                 odgovor =  false;
             }
             
-            List<DomenskiObjekat> p = broker.VratiSve(new Predmet());
-            foreach(Predmet p1 in p)
-            {
-                Console.WriteLine(p1.PredmetID + " " + p1.Klijent.KlijentID);
-            }
+            //List<DomenskiObjekat> p = broker.VratiSve(new Predmet());
+            //foreach(Predmet p1 in p)
+            //{
+            //    Console.WriteLine(p1.PredmetID + " " + p1.Klijent.KlijentID);
+            //}
             foreach(Angazovanje a in angazovanja)
             {
                a.Predmet.PredmetID = broker.VratiMaxID(predmet);

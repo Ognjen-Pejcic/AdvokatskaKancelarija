@@ -1,10 +1,12 @@
 ﻿using Domen;
 using Kontroler;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Net.Sockets;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Windows.Forms;
 using Zajednicki;
 
 namespace Server
@@ -100,12 +102,31 @@ namespace Server
                             }
                             formatter.Serialize(stream, odgovor);
                             break;
+                        case Operacija.PretraziPredmete:
+                            odgovor.ListaPredmeta = Controller.Instance.NadjiPredmete(zahtev.KriterijumPretrage, zahtev.TekstPretrage,zahtev.Datum, new Predmet());
+                            if (odgovor.ListaPredmeta.Count == 0) odgovor.Signal = Signal.NeuspesnaPretraga;
+                            else odgovor.Signal = Signal.UspesnaPretraga;
+                            formatter.Serialize(stream, odgovor);
+                            break;
+                        case Operacija.ArhivirajPredmet:
+                            if (Controller.Instance.ArhivirajPredmet(zahtev.Predmet))
+                            {
+                                odgovor.Signal = Signal.PredmetUspesnoArhiviran;
+                            }
+                            formatter.Serialize(stream, odgovor);
+                            break;
+                        case Operacija.PretraziSastanke:
+                            odgovor.ListaSastanaka = Controller.Instance.NadjiSastanke(zahtev.KriterijumPretrage, zahtev.TekstPretrage, zahtev.Datum, new Sastanak());
+                            if (odgovor.ListaPredmeta.Count == 0) odgovor.Signal = Signal.NeuspesnaPretraga;
+                            else odgovor.Signal = Signal.UspesnaPretraga;
+                            formatter.Serialize(stream, odgovor);
+                            break;
                     }
                 }
             }
-            catch
+            catch(Exception e)
             {
-
+               // MessageBox.Show(e.Message);
             }
         }
     }

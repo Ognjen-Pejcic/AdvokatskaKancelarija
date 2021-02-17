@@ -12,7 +12,7 @@ namespace SistemskeOperacije
         protected override object Execute(DomenskiObjekat domenskiObjekat)
         {
             Predmet predmet = (Predmet)domenskiObjekat;
-            List<Predmet> predmeti= broker.Filtriraj(domenskiObjekat).OfType<Predmet>().ToList();
+            List<Predmet> predmeti= broker.VratiSveJoinWhere(domenskiObjekat).OfType<Predmet>().ToList();
             return predmeti;
         }
 
