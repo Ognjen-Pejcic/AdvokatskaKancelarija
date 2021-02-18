@@ -109,6 +109,7 @@
             this.Controls.Add(this.dtpDatum);
             this.Location = new System.Drawing.Point(1050, 500);
             this.Name = "PrikazSastankaFrm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PrikazSastankaFrm";
             this.Load += new System.EventHandler(this.PrikazSastankaFrm_Load);
             this.ResumeLayout(false);

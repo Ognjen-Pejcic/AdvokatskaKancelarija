@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,7 @@ namespace DbBroker
 
         public Broker()
         {
-            connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=AdvokatskaKancelarija;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            connection = new SqlConnection(ConfigurationManager.ConnectionStrings["ProductsDatabase"].ConnectionString);
         }
 
         public void OpenConnection()

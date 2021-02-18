@@ -29,6 +29,7 @@ namespace Client.Forme
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.btnSacuvaj = new System.Windows.Forms.Button();
             this.dgvSastanci = new System.Windows.Forms.DataGridView();
@@ -44,9 +45,12 @@ namespace Client.Forme
             // btnDodaj
             // 
             this.btnDodaj.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDodaj.Location = new System.Drawing.Point(428, 156);
+            this.btnDodaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDodaj.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDodaj.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(249)))));
+            this.btnDodaj.Location = new System.Drawing.Point(560, 125);
             this.btnDodaj.Name = "btnDodaj";
-            this.btnDodaj.Size = new System.Drawing.Size(171, 23);
+            this.btnDodaj.Size = new System.Drawing.Size(78, 58);
             this.btnDodaj.TabIndex = 0;
             this.btnDodaj.Text = "Dodaj sastanak";
             this.btnDodaj.UseVisualStyleBackColor = true;
@@ -55,9 +59,12 @@ namespace Client.Forme
             // btnSacuvaj
             // 
             this.btnSacuvaj.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSacuvaj.Location = new System.Drawing.Point(428, 385);
+            this.btnSacuvaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSacuvaj.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSacuvaj.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(249)))));
+            this.btnSacuvaj.Location = new System.Drawing.Point(322, 435);
             this.btnSacuvaj.Name = "btnSacuvaj";
-            this.btnSacuvaj.Size = new System.Drawing.Size(171, 23);
+            this.btnSacuvaj.Size = new System.Drawing.Size(154, 26);
             this.btnSacuvaj.TabIndex = 1;
             this.btnSacuvaj.Text = "Sacuvaj sastanke";
             this.btnSacuvaj.UseVisualStyleBackColor = true;
@@ -68,7 +75,15 @@ namespace Client.Forme
             this.dgvSastanci.AllowUserToAddRows = false;
             this.dgvSastanci.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvSastanci.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSastanci.Location = new System.Drawing.Point(93, 195);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSastanci.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvSastanci.Location = new System.Drawing.Point(132, 217);
             this.dgvSastanci.Name = "dgvSastanci";
             this.dgvSastanci.Size = new System.Drawing.Size(506, 166);
             this.dgvSastanci.TabIndex = 2;
@@ -77,37 +92,45 @@ namespace Client.Forme
             // 
             this.cbAdvokat.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbAdvokat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAdvokat.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbAdvokat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(240)))));
             this.cbAdvokat.FormattingEnabled = true;
-            this.cbAdvokat.Location = new System.Drawing.Point(265, 32);
+            this.cbAdvokat.Location = new System.Drawing.Point(322, 84);
             this.cbAdvokat.Name = "cbAdvokat";
-            this.cbAdvokat.Size = new System.Drawing.Size(334, 21);
+            this.cbAdvokat.Size = new System.Drawing.Size(227, 25);
             this.cbAdvokat.TabIndex = 3;
             // 
             // cbKlijent
             // 
             this.cbKlijent.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbKlijent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbKlijent.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbKlijent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(240)))));
             this.cbKlijent.FormattingEnabled = true;
-            this.cbKlijent.Location = new System.Drawing.Point(265, 71);
+            this.cbKlijent.Location = new System.Drawing.Point(322, 123);
             this.cbKlijent.Name = "cbKlijent";
-            this.cbKlijent.Size = new System.Drawing.Size(334, 21);
+            this.cbKlijent.Size = new System.Drawing.Size(227, 25);
             this.cbKlijent.TabIndex = 4;
             // 
             // dtpDatum
             // 
             this.dtpDatum.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dtpDatum.Location = new System.Drawing.Point(265, 110);
+            this.dtpDatum.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDatum.Location = new System.Drawing.Point(322, 161);
             this.dtpDatum.Name = "dtpDatum";
-            this.dtpDatum.Size = new System.Drawing.Size(334, 20);
+            this.dtpDatum.Size = new System.Drawing.Size(227, 22);
             this.dtpDatum.TabIndex = 5;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(90, 40);
+            this.label1.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(129, 84);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.Size = new System.Drawing.Size(67, 21);
             this.label1.TabIndex = 6;
             this.label1.Text = "Advokat";
             // 
@@ -115,9 +138,11 @@ namespace Client.Forme
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(90, 79);
+            this.label2.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(129, 123);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(53, 21);
             this.label2.TabIndex = 7;
             this.label2.Text = "Klijent";
             // 
@@ -125,9 +150,11 @@ namespace Client.Forme
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(90, 117);
+            this.label3.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(129, 161);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(121, 13);
+            this.label3.Size = new System.Drawing.Size(177, 21);
             this.label3.TabIndex = 8;
             this.label3.Text = "Datum i vreme sastanka";
             // 
@@ -135,7 +162,6 @@ namespace Client.Forme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 450);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -146,7 +172,7 @@ namespace Client.Forme
             this.Controls.Add(this.btnSacuvaj);
             this.Controls.Add(this.btnDodaj);
             this.Name = "ZakazivanjeSastanakaFrm";
-            this.Text = "Zakazivanje sastanaka";
+            this.Size = new System.Drawing.Size(783, 535);
             this.Load += new System.EventHandler(this.btnDodaj_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSastanci)).EndInit();
             this.ResumeLayout(false);

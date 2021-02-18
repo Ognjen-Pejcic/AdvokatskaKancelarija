@@ -20,7 +20,7 @@ namespace Client.Kontroleri
             if(Komunikacija.Instance.Login(korisnickoime, lozinka))
             {
                 MessageBox.Show("Uspesno prijavljivanje");
-                FrmGlavna glavna = new FrmGlavna();
+                FrmGlavna glavna = new FrmGlavna(korisnickoime);
                 glavna.ShowDialog();
             }
             else

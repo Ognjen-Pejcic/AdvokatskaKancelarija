@@ -65,7 +65,9 @@ namespace Client.Forme
 
         private void btnSacuvaj_Click(object sender, EventArgs e)
         {
-            kontroler.Sacuvaj(id, txtNaziv.Text, dtpDatum.Value, txtOpis.Text, cbFaza.Text, cbVrsta.SelectedItem);
+            if (!chBArhiviran.Checked)
+                kontroler.Sacuvaj(id, txtNaziv.Text, dtpDatum.Value, txtOpis.Text, cbFaza.Text, cbVrsta.SelectedItem);
+            else MessageBox.Show("Sistem ne moze da izmeni predmet");
         }
     }
 }

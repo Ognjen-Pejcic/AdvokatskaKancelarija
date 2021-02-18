@@ -159,6 +159,7 @@
             this.Controls.Add(this.txtPrezime);
             this.Controls.Add(this.txtIme);
             this.Name = "PrikazKlijentaFRM";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PrikazKlijentaFRM";
             this.Load += new System.EventHandler(this.PrikazKlijentaFRM_Load);
             this.ResumeLayout(false);

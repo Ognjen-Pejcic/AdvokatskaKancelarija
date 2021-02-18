@@ -25,13 +25,13 @@ namespace Zajednicki
 
     public enum Signal
     {
-        UspesnoPrijavljen,
+        UspesnoPrijavljen=9,
         KlijentUspesnoDodat,
         SastanciUspesnoZakazani,
         PredmetUspesnoDodat,
         NeuspesnaPretraga,
         UspesnaPretraga,
         KlijentUspesnoIzmenjen,
-        PredmetUspesnoArhiviran
+        PredmetUspesnoArhiviran=0
     }
 }

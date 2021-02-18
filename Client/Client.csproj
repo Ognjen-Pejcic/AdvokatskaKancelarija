@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,19 +54,19 @@
       <DependentUpon>FrmGlavna.cs</DependentUpon>
     </Compile>
     <Compile Include="Forme\FrmPretragaKlijenata.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forme\FrmPretragaKlijenata.Designer.cs">
       <DependentUpon>FrmPretragaKlijenata.cs</DependentUpon>
     </Compile>
     <Compile Include="Forme\PretragaPredmetaFrm.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forme\PretragaPredmetaFrm.Designer.cs">
       <DependentUpon>PretragaPredmetaFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forme\PretragaSastanakaFrm.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forme\PretragaSastanakaFrm.Designer.cs">
       <DependentUpon>PretragaSastanakaFrm.cs</DependentUpon>
@@ -89,19 +90,19 @@
       <DependentUpon>PrikazSastankaFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forme\UnosKlijentaFrm.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forme\UnosKlijentaFrm.Designer.cs">
       <DependentUpon>UnosKlijentaFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forme\UnosPredmetaFrm.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forme\UnosPredmetaFrm.Designer.cs">
       <DependentUpon>UnosPredmetaFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forme\ZakazivanjeSastanakaFrm.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forme\ZakazivanjeSastanakaFrm.Designer.cs">
       <DependentUpon>ZakazivanjeSastanakaFrm.cs</DependentUpon>
@@ -165,6 +166,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -188,6 +190,30 @@
       <Project>{247f7813-0b1a-4489-9ec9-4d25d668ccb3}</Project>
       <Name>Zajednicki</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\54874.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\54874.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\consultation-conference-male-lawyers-professional-businesswoman-working-discussion-having-law-firm-office-concepts-law-judge-gavel-with-scales-justice_28283-1408.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\67-679412_x-cross-close-symbol-icon-button-gui-grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\90-905672_x-cross-close-symbol-icon-button-gui-close.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white-cross-icon-18.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

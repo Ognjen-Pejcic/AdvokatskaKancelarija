@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Client.Forme
 {
-    public partial class ZakazivanjeSastanakaFrm : Form
+    public partial class ZakazivanjeSastanakaFrm : UserControl
     {
 
         ZakazivanjeSastanakaKontroler kontroler = new ZakazivanjeSastanakaKontroler();

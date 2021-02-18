@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnPretrazi = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -42,17 +44,22 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(557, 93);
+            this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dateTimePicker1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(548, 58);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(208, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(208, 25);
             this.dateTimePicker1.TabIndex = 27;
             // 
             // btnPretrazi
             // 
             this.btnPretrazi.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPretrazi.Location = new System.Drawing.Point(557, 124);
+            this.btnPretrazi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPretrazi.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPretrazi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnPretrazi.Location = new System.Drawing.Point(548, 108);
             this.btnPretrazi.Name = "btnPretrazi";
-            this.btnPretrazi.Size = new System.Drawing.Size(208, 23);
+            this.btnPretrazi.Size = new System.Drawing.Size(208, 33);
             this.btnPretrazi.TabIndex = 25;
             this.btnPretrazi.Text = "Pretrazi";
             this.btnPretrazi.UseVisualStyleBackColor = true;
@@ -60,38 +67,61 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(557, 93);
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(240)))));
+            this.textBox1.Location = new System.Drawing.Point(548, 58);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(208, 20);
+            this.textBox1.Size = new System.Drawing.Size(208, 25);
             this.textBox1.TabIndex = 24;
             // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(418, 96);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(406, 60);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 13);
+            this.label3.Size = new System.Drawing.Size(120, 20);
             this.label3.TabIndex = 23;
-            this.label3.Text = "Tekst pretrage";
+            this.label3.Text = "Tekst pretrage: ";
             // 
             // dgvRezultat
             // 
             this.dgvRezultat.AllowUserToAddRows = false;
             this.dgvRezultat.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvRezultat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRezultat.Location = new System.Drawing.Point(140, 153);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRezultat.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvRezultat.Location = new System.Drawing.Point(163, 157);
             this.dgvRezultat.Name = "dgvRezultat";
-            this.dgvRezultat.Size = new System.Drawing.Size(625, 150);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRezultat.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvRezultat.Size = new System.Drawing.Size(593, 227);
             this.dgvRezultat.TabIndex = 21;
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 153);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(24, 157);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 13);
+            this.label2.Size = new System.Drawing.Size(133, 20);
             this.label2.TabIndex = 20;
             this.label2.Text = "Rezultat pretrage";
             // 
@@ -99,9 +129,11 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 96);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(24, 60);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.Size = new System.Drawing.Size(93, 20);
             this.label1.TabIndex = 19;
             this.label1.Text = "Pretrazi po: ";
             // 
@@ -114,7 +146,7 @@
             "Klijentu",
             "Advokatu",
             "Datumu"});
-            this.cbKriterijum.Location = new System.Drawing.Point(140, 96);
+            this.cbKriterijum.Location = new System.Drawing.Point(163, 62);
             this.cbKriterijum.Name = "cbKriterijum";
             this.cbKriterijum.Size = new System.Drawing.Size(111, 21);
             this.cbKriterijum.TabIndex = 18;
@@ -123,9 +155,12 @@
             // btnPrikazi
             // 
             this.btnPrikazi.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPrikazi.Location = new System.Drawing.Point(557, 318);
+            this.btnPrikazi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrikazi.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrikazi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnPrikazi.Location = new System.Drawing.Point(548, 419);
             this.btnPrikazi.Name = "btnPrikazi";
-            this.btnPrikazi.Size = new System.Drawing.Size(208, 23);
+            this.btnPrikazi.Size = new System.Drawing.Size(208, 40);
             this.btnPrikazi.TabIndex = 28;
             this.btnPrikazi.Text = "Prikazi";
             this.btnPrikazi.UseVisualStyleBackColor = true;
@@ -135,7 +170,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnPrikazi);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btnPretrazi);
@@ -146,7 +180,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbKriterijum);
             this.Name = "PretragaSastanakaFrm";
-            this.Text = "Pretraga sastanaka";
+            this.Size = new System.Drawing.Size(783, 535);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRezultat)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

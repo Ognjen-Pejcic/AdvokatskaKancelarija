@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Client.Forme
 {
-    public partial class UnosKlijentaFrm : Form
+    public partial class UnosKlijentaFrm : UserControl
     {
         DodajKlijentaKontroler kontroler = new DodajKlijentaKontroler();
         public UnosKlijentaFrm()

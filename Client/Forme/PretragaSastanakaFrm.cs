@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Client.Forme
 {
-    public partial class PretragaSastanakaFrm : Form
+    public partial class PretragaSastanakaFrm : UserControl
     {
         PretragaSastanakaKontroler kontroler = new PretragaSastanakaKontroler();
         public PretragaSastanakaFrm()

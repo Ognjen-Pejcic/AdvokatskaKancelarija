@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Client.Forme
 {
-    public partial class FrmPretragaKlijenata : Form
+    public partial class FrmPretragaKlijenata : UserControl
     {
         PretragaKlijenataKontroler kontroler = new PretragaKlijenataKontroler();
         bool provera;
@@ -59,6 +59,11 @@ namespace Client.Forme
                 dgvRezultat.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
             provera = true;
+        }
+
+        private void FrmPretragaKlijenata_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

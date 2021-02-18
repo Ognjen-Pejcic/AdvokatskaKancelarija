@@ -200,6 +200,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "PrikazPredmetaFrm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PrikazPredmetaFrm";
             this.Load += new System.EventHandler(this.PrikazPredmetaFrm_Load);
             this.ResumeLayout(false);
