@@ -31,15 +31,15 @@ namespace Domen
         public string InsertValues => $"{Klijent.KlijentID}, '{NazivPremdeta}', '{DatumOtvaranja}', '{Arhiviran}', '{OpisPredmeta}', '{Faza}', {VrstaPostupka.VrstaPostupkaID}";
 
         [Browsable(false)]
-        public string JoinCondition => throw new NotImplementedException();
+        public string JoinCondition => $"p.predmetid = {PredmetID}";
 
         [Browsable(false)]
         public string JoinFull => "p join klijent k on(k.klijentid = p.klijentid) join vrstapostupka v on (v.vrstapostupkaID = p.vrstaPostupkaID) ";
 
         [Browsable(false)]
-        public string KriterijumPretrage => $"p.predmetid = {PredmetID}";
+        public string KriterijumPretrage => $"predmetid = {PredmetID}";
         [Browsable(false)]
-        public string UpdateValues => $"klijentid = {Klijent.KlijentID}, nazivpredmeta ='{NazivPremdeta}', datumotvaranja = '{DatumOtvaranja}', arhiviran = '{Arhiviran}', opispredmeta = '{OpisPredmeta}', faza ='{Faza}', vrstapostupkaid = {VrstaPostupka.VrstaPostupkaID}";
+        public string UpdateValues => $" nazivpredmeta ='{NazivPremdeta}', datumotvaranja = '{DatumOtvaranja}', opispredmeta = '{OpisPredmeta}', faza ='{Faza}', vrstapostupkaid = {VrstaPostupka.VrstaPostupkaID}";
 
         [Browsable(false)]
         public string Arhiviranje => "arhiviran = 'true'";

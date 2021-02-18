@@ -13,6 +13,7 @@ namespace Server
 {
     public partial class FrmServer : Form
     {
+        Server server = new Server();
         public FrmServer()
         {
             InitializeComponent();
@@ -25,10 +26,18 @@ namespace Server
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            Server server = new Server();
+            
             Thread nit =  new Thread(server.Start);
             nit.IsBackground = true;
             nit.Start();
+            progressBar1.Value = 100 ;
+            
+        }
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            server.Stop();
+            progressBar1.Value = 0;
         }
     }
 }

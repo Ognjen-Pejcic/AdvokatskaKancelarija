@@ -22,7 +22,7 @@ namespace Domen
         [Browsable(false)]
         public string InsertValues => $"'{DatumIVremeSastanka}', {Advokat.AdvokatID}, {Klijent.KlijentID}";
         [Browsable(false)]
-        public string JoinCondition => throw new NotImplementedException();
+        public string JoinCondition => $" SastanakID = {SastanakID}";
 
         [Browsable(false)]
         public string JoinFull => $" s join advokat a on (s.advokatid = a.advokatid) join klijent k on (k.klijentid = s.klijentid)";

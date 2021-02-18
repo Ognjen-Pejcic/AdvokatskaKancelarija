@@ -82,7 +82,6 @@ namespace Client.Forme
                 MessageBox.Show("Morate odabrati predmet za prikaz");
                 return;
             }
-            provera = false;
             btnPretrazi_Click(sender, e);
         }
 

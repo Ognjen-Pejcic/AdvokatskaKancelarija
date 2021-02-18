@@ -99,6 +99,7 @@ namespace Client
             this.Location = new System.Drawing.Point(1050, 500);
             this.Name = "FrmLogin";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmLogin_FormClosing);
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

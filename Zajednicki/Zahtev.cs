@@ -41,6 +41,9 @@ namespace Zajednicki
         ArhivirajPredmet,
         PretraziSastanke,
         VratiPredmet,
-        VratiSastanak
+        VratiSastanak,
+        Prekini,
+        IzlogujSe,
+        IzmeniPredmet
     }
 }

@@ -15,7 +15,7 @@ namespace Client
     {
         private static Komunikacija instance;
         private Socket klijentskiSoket;
-
+        private Sekretar logovaniSekretar;
         
 
         private NetworkStream stream;
@@ -29,25 +29,59 @@ namespace Client
             }
         }
 
+        internal bool SacuvajPredmet(Predmet predmet)
+        {
+            Zahtev zahtev = new Zahtev();
+            zahtev.Operacija = Operacija.IzmeniPredmet;
+            zahtev.Predmet = predmet;
+            formatter.Serialize(stream, zahtev);
+            Odgovor odgovor = (Odgovor)formatter.Deserialize(stream);
+            if (odgovor.Signal == Signal.PredmetUspesnoDodat)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+
+            }
+        }
+
         internal bool Login(string korisnickoime, string lozinka)
         {
             Zahtev zahtev = new Zahtev();
             zahtev.Operacija = Operacija.Login;
-            zahtev.Sekretar = new Sekretar
+            Sekretar s = new Sekretar
             {
                 KorisnickoIme = korisnickoime,
                 Lozinka = lozinka
             };
+            zahtev.Sekretar = s;
             formatter.Serialize(stream, zahtev);
             Odgovor odgovor = (Odgovor)formatter.Deserialize(stream);
             if (odgovor.Signal == Signal.UspesnoPrijavljen)
             {
+                logovaniSekretar = s;
                 return true;
             }
             return false;
         }
 
-  
+        internal void PrekiniKomunikaciju()
+        {
+            try
+            {
+                Zahtev zahtev = new Zahtev();
+                zahtev.Operacija = Operacija.Prekini;
+                klijentskiSoket.Shutdown(SocketShutdown.Both);
+                klijentskiSoket.Close();
+            }
+            catch
+            {
+
+            }
+           
+        }
 
         internal bool Connect()
         {
@@ -68,7 +102,22 @@ namespace Client
             }
         }
 
-      
+        internal void IzlogujSe()
+        {
+            try
+            {
+                Zahtev zahtev = new Zahtev();
+                zahtev.Sekretar = logovaniSekretar;
+                zahtev.Operacija = Operacija.IzlogujSe;
+                formatter.Serialize(stream, zahtev);
+            }
+            catch
+            {
+
+            }
+            
+        }
+
         internal bool IzmeniKlienta(Klijent klijent)
         {
             Zahtev zahtev = new Zahtev();

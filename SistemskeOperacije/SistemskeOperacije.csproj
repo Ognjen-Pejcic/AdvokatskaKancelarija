@@ -45,6 +45,7 @@
     <Compile Include="ApstraknaGenerickaOperacija.cs" />
     <Compile Include="ArhivirajPredmetSO.cs" />
     <Compile Include="IzmeniKlijentaSO.cs" />
+    <Compile Include="IzmeniPredmetSO.cs" />
     <Compile Include="NadjiKlijenteSO.cs" />
     <Compile Include="NadjiPredmeteSO.cs" />
     <Compile Include="NadjiSastankeSO.cs" />

@@ -25,7 +25,7 @@ namespace Client.Kontroleri
             }
             else
             {
-                MessageBox.Show("Korisnik ne postoji");
+                MessageBox.Show("Korisnik ne postoji ili je vec prijavljen");
             }
         }
     }

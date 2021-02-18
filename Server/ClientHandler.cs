@@ -13,12 +13,11 @@ namespace Server
 {
     public class ClientHandler
     {
-        private Socket klijentskiSoket;
+        public Socket klijentskiSoket;
         private NetworkStream stream;
         private BinaryFormatter formatter = new BinaryFormatter();
-        private Sekretar logovaniSekretar;
-        private List<Sekretar> sekretari = Controller.Instance.VratiSekretare();
-        
+        private static List<Sekretar> sekretari = Controller.Instance.VratiSekretare();
+        public  static List<Sekretar> logovaniSekretari = new List<Sekretar>();
         public ClientHandler(Socket KlijentskiSoket)
         {
             this.klijentskiSoket = KlijentskiSoket;
@@ -35,13 +34,30 @@ namespace Server
                     switch (zahtev.Operacija)
                     {
                         case Operacija.Login:
-                            foreach(Sekretar sekretar in sekretari)
-                            {
-                                if(sekretar.KorisnickoIme == zahtev.Sekretar.KorisnickoIme && sekretar.Lozinka == zahtev.Sekretar.Lozinka)
+
+
+                            bool provera = true;
+                                foreach (Sekretar sekretar in sekretari)
                                 {
-                                    logovaniSekretar = sekretar;
+                                foreach (Sekretar s in logovaniSekretari)
+                                {
+                                    if(s.KorisnickoIme== sekretar.KorisnickoIme && s.Lozinka == sekretar.Lozinka)
+                                    {
+                                        odgovor.Sekretar = null;
+                                        odgovor.Signal = Signal.NeuspesnaPretraga;
+                                        provera = false;
+                                        break;
+
+                                    }
+
+                                    
+                                }
+                                if (sekretar.KorisnickoIme == zahtev.Sekretar.KorisnickoIme && sekretar.Lozinka == zahtev.Sekretar.Lozinka && provera)
+                                {
+
                                     odgovor.Signal = Signal.UspesnoPrijavljen;
                                     odgovor.Sekretar = sekretar;
+                                    logovaniSekretari.Add(sekretar);
                                     break;
                                 }
                             }
@@ -121,6 +137,13 @@ namespace Server
                             else odgovor.Signal = Signal.UspesnaPretraga;
                             formatter.Serialize(stream, odgovor);
                             break;
+                        case Operacija.IzmeniPredmet:
+                            if (Controller.Instance.IzmeniPredmet(zahtev.Predmet))
+                            {
+                                odgovor.Signal = Signal.PredmetUspesnoDodat;
+                            }
+                            formatter.Serialize(stream, odgovor);
+                            break;
                         case Operacija.VratiPredmet:
                             odgovor.Predmet = Controller.Instance.UcitajPredmet(new Predmet { PredmetID = zahtev.ID});
                             formatter.Serialize(stream, odgovor);
@@ -129,12 +152,27 @@ namespace Server
                             odgovor.Sastanak = Controller.Instance.UcitajSastanak(new Sastanak { SastanakID = zahtev.ID });
                             formatter.Serialize(stream, odgovor);
                             break;
+                        case Operacija.IzlogujSe:
+                            foreach(Sekretar s in logovaniSekretari)
+                            {
+                                if(s.KorisnickoIme == zahtev.Sekretar.KorisnickoIme)
+                                {
+                                    logovaniSekretari.Remove(s);
+                                    break;
+                                }
+                            }
+                            break;
+                        case Operacija.Prekini:
+                            throw new SocketException();
+                            break;
                     }
                 }
             }
+ 
             catch(Exception e)
             {
-               MessageBox.Show(e.Message);
+               
+                
             }
         }
     }

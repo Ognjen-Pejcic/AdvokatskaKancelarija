@@ -116,6 +116,7 @@ namespace Client.Forme
             this.Controls.Add(this.button1);
             this.Name = "FrmGlavna";
             this.Text = "FrmGlavna";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmGlavna_FormClosing);
             this.Load += new System.EventHandler(this.FrmGlavna_Load);
             this.ResumeLayout(false);
 

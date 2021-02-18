@@ -106,7 +106,7 @@ namespace DbBroker
         public DomenskiObjekat VratiJedanJoin(DomenskiObjekat domenskiObjekat)
         {
             SqlCommand command = new SqlCommand("", connection, transaction);
-            command.CommandText = $"SELECT {domenskiObjekat.PovratneVrednosti} FROM {domenskiObjekat.TableName} {domenskiObjekat.JoinFull} where {domenskiObjekat.KriterijumPretrage}";
+            command.CommandText = $"SELECT {domenskiObjekat.PovratneVrednosti} FROM {domenskiObjekat.TableName} {domenskiObjekat.JoinFull} where {domenskiObjekat.JoinCondition}";
             Console.Write(command.CommandText);
             SqlDataReader reader = command.ExecuteReader();
             DomenskiObjekat rezultat = domenskiObjekat.GetEntity(reader);

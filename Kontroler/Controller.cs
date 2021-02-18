@@ -129,5 +129,11 @@ namespace Kontroler
             ApstraknaGenerickaOperacija operacija = new IzmeniKlijentaSO();
             return (bool)operacija.ExecuteSO(klijent);
         }
+
+        public bool IzmeniPredmet(Predmet predmet)
+        {
+            ApstraknaGenerickaOperacija operacija = new IzmeniPredmetSO();
+            return (bool)operacija.ExecuteSO(predmet);
+        }
     }
 }

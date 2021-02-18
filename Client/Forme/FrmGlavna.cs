@@ -64,5 +64,10 @@ namespace Client.Forme
             PretragaSastanakaFrm frm = new PretragaSastanakaFrm();
             frm.ShowDialog();
         }
+
+        private void FrmGlavna_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Komunikacija.Instance.IzlogujSe();
+        }
     }
 }

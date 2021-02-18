@@ -44,5 +44,12 @@ namespace Client
         {
 
         }
+
+        private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+           
+                Komunikacija.Instance.PrekiniKomunikaciju();
+            
+        }
     }
 }

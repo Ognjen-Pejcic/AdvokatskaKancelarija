@@ -13,7 +13,7 @@ namespace Server
     public class Server
     {
             private Socket serverskiSocket;
-            
+        static List<ClientHandler> clienthandlers = new List<ClientHandler>();
             public Server()
             {
                 
@@ -30,6 +30,7 @@ namespace Server
                 {
                     Socket klijentskiSoket = serverskiSocket.Accept();
                     ClientHandler handler = new ClientHandler(klijentskiSoket);
+                    clienthandlers.Add(handler);
                     Thread nit = new Thread(handler.ObradiZahteve);
                     nit.IsBackground=true;
                     nit.Start();
@@ -41,17 +42,20 @@ namespace Server
             }
      }
 
-       
+        internal void Stop()
+        {
+            serverskiSocket.Close();
+            ClientHandler.logovaniSekretari.Clear();
+            foreach (ClientHandler c in clienthandlers)
+            {
+                
+                c.klijentskiSoket.Close();
+            }
+            
+            clienthandlers.Clear();
 
-            //internal void Stop()
-            //{
-            //    serverskiSocket.Close();
-            //    foreach (ClientHandler c in clients)
-            //    {
-            //        // c.Stop();
-            //    }
-            //    clients.Clear();
-            //}
+        }
+
     }
     
 }
