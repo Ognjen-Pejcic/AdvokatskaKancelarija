@@ -80,7 +80,7 @@ namespace Server
                             formatter.Serialize(stream, odgovor);
                             break;
                         case Operacija.ZakaziSastanke:
-                            if (Controller.Instance.ZakaziSastanke(zahtev.Sastanci.ToList()))
+                            if (Controller.Instance.ZakaziSastanke(zahtev.Sastanci.ToList(), new Sastanak()))
                             {
                                 odgovor.Signal = Signal.SastanciUspesnoZakazani;
                             }

@@ -38,6 +38,7 @@ namespace SistemskeOperacije
                     odgovor = false;
                 }
             }
+           
             return odgovor;
         }
 

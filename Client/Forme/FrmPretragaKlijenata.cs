@@ -31,6 +31,7 @@ namespace Client.Forme
             else
             {
                 MessageBox.Show("Morate odabrati klijenta za prikaz");
+
                 return;
             }
             provera = false;

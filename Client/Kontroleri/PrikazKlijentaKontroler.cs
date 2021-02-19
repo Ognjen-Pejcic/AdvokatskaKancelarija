@@ -23,8 +23,13 @@ namespace Client.Kontroleri
             };
             if (Komunikacija.Instance.IzmeniKlienta(klijent))
             {
-                MessageBox.Show("Sistem je uspesno izmenio klijenta");
+                MessageBox.Show("Sistem je zapamtio klijenta");
             }
+            else
+            {
+                MessageBox.Show("Sistem ne moze da zapamti podakte o klijentu");
+            }
+           
         }
     }
 }

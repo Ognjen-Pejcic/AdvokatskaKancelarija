@@ -11,7 +11,7 @@ namespace Client.Kontroleri
 {
     public class DodajKlijentaKontroler
     {
-        internal void Dodaj(string jmbg, string ime, string prezime, string adresa, string telefon)
+        internal void Dodaj(string jmbg, string ime, string prezime, string telefon, string adresa)
         {
             if(String.IsNullOrEmpty(jmbg) || String.IsNullOrEmpty(ime) || String.IsNullOrEmpty(prezime) || String.IsNullOrEmpty(adresa) || String.IsNullOrEmpty(telefon))
             {   
@@ -21,6 +21,7 @@ namespace Client.Kontroleri
             Regex r = new Regex("^(0[1-9]|[1-2][0-9]|3[0-1])(0[1-9]|1[0-2])[0-9]{9}$");
             if (!r.IsMatch(jmbg)) {
                 MessageBox.Show("Unesite validan JMBG");
+                MessageBox.Show("Sistem ne moze da zapamti klijeta");
                 return;
             }
             Klijent klijent = new Klijent
@@ -38,6 +39,7 @@ namespace Client.Kontroleri
             else
             {
                 MessageBox.Show("Sistem ne moze da zapamti klijeta");
+                
             }
         }
     }

@@ -13,8 +13,6 @@ namespace SistemskeOperacije
     {
         protected abstract object Execute(DomenskiObjekat domenskiObjekat);
         protected abstract void Validate(DomenskiObjekat domenskiObjekat);
-        protected abstract object Execute(List<DomenskiObjekat> domenskiObjekat);
-        protected abstract void Validate(List<DomenskiObjekat> domenskiObjekat);
 
         protected Broker broker = new Broker();
 
@@ -45,35 +43,6 @@ namespace SistemskeOperacije
             return res;
         }
 
-        
 
-        public object ExecuteSO(List<DomenskiObjekat> domenskiObjekti)
-        {
-            object res = null;
-
-            try
-            {
-                Validate(domenskiObjekti);
-                broker.OpenConnection();
-                broker.BeginTransaction();
-
-                res = Execute(domenskiObjekti);
-
-                broker.Commit();
-            }
-            catch (Exception)
-            {
-                broker.Rollback();
-
-            }
-            finally
-            {
-                broker.CloseConnection();
-            }
-            return res;
-        }
-
-       
-        
     }
 }

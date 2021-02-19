@@ -63,7 +63,6 @@
             this.label1.Size = new System.Drawing.Size(53, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Klijent";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -76,7 +75,6 @@
             this.label2.Size = new System.Drawing.Size(120, 21);
             this.label2.TabIndex = 1;
             this.label2.Text = "Naziv predmeta";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -89,7 +87,6 @@
             this.label3.Size = new System.Drawing.Size(197, 21);
             this.label3.TabIndex = 2;
             this.label3.Text = "Datum otvaranja predmeta";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -102,7 +99,6 @@
             this.label4.Size = new System.Drawing.Size(74, 21);
             this.label4.TabIndex = 3;
             this.label4.Text = "Arhiviran";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -115,7 +111,6 @@
             this.label5.Size = new System.Drawing.Size(42, 21);
             this.label5.TabIndex = 4;
             this.label5.Text = "Opis";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -128,7 +123,6 @@
             this.label6.Size = new System.Drawing.Size(40, 21);
             this.label6.TabIndex = 5;
             this.label6.Text = "Faza";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -141,7 +135,6 @@
             this.label7.Size = new System.Drawing.Size(113, 21);
             this.label7.TabIndex = 6;
             this.label7.Text = "Vrsta postupka";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -154,7 +147,6 @@
             this.label8.Size = new System.Drawing.Size(71, 21);
             this.label8.TabIndex = 7;
             this.label8.Text = "Advokati";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label9
             // 
@@ -167,7 +159,6 @@
             this.label9.Size = new System.Drawing.Size(154, 21);
             this.label9.TabIndex = 8;
             this.label9.Text = "Angazovani advokati";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // cbKlijent
             // 

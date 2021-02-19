@@ -9,6 +9,11 @@ namespace SistemskeOperacije
 {
     public class ZakaziSastankeSO : ApstraknaGenerickaOperacija
     {
+        List<Sastanak> sastanci;
+        public ZakaziSastankeSO(List<Sastanak> sastanci)
+        {
+            this.sastanci = sastanci;
+        }
         protected override object Execute(DomenskiObjekat domenskiObjekat)
         {
             List<Sastanak> sastanci = (List < Sastanak >) domenskiObjekat;
@@ -26,7 +31,7 @@ namespace SistemskeOperacije
         {
             
             bool signal = true;
-            foreach (Sastanak s in domenskiObjekat)
+            foreach (Sastanak s in sastanci)
             {
                 if (!(broker.Sacuvaj(s) > 0))
                 {
@@ -38,7 +43,7 @@ namespace SistemskeOperacije
 
         protected override void Validate(DomenskiObjekat domenskiObjekat)
         {
-            if (!(domenskiObjekat is List<Sastanak>))
+            if (!(domenskiObjekat is Sastanak))
             {
                 throw new ArgumentException();
             }

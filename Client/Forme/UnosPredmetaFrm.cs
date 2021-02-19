@@ -22,8 +22,11 @@ namespace Client.Forme
         private void UnosPredmetaFrm_Load(object sender, EventArgs e)
         {
             cbKlijent.DataSource = Komunikacija.Instance.PrikaziKlijente();
+            cbKlijent.SelectedIndex = -1;
             cbAdvokati.DataSource = Komunikacija.Instance.PrikaziAdvokate();
+            cbAdvokati.SelectedIndex = -1;
             cbVrsta.DataSource = Komunikacija.Instance.PrikaziVrste();
+            cbVrsta.SelectedIndex = -1;
             dgvAdvokati.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
         }
@@ -39,51 +42,9 @@ namespace Client.Forme
         private void btnSacuvaj_Click(object sender, EventArgs e)
         {
             kontroler.Sacuvaj(cbKlijent.SelectedItem, txtNaziv.Text, dtpDatum.Value, chBArhiviran.Checked , txtOpis.Text, cbFaza.SelectedItem, cbVrsta.SelectedItem);
+            dgvAdvokati.DataSource = kontroler.angazovaniAdvokati;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

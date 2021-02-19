@@ -33,6 +33,7 @@ namespace Client.Kontroleri
             if(klijent==null || String.IsNullOrEmpty(naziv) || datumVreme == null || faza==null || vrsta == null)
             {
                 MessageBox.Show("Svi podaci su obavezni osim opisa");
+                MessageBox.Show("Sistem ne moze da zapamti predmet");
                 return;
             }
             Predmet predmet = new Predmet
@@ -57,12 +58,14 @@ namespace Client.Kontroleri
             }
             if (Komunikacija.Instance.DodajPredmet(predmet, angazovanja))
             {
-                MessageBox.Show("Sistem je sacuvao predmet");
+                MessageBox.Show("Sistem je zapamtio predmet");
             }
             else
             {
-                MessageBox.Show("Sistem nije sacuvao predmet");
+                MessageBox.Show("Sistem ne moze da sacuva predmet");
             }
+            angazovaniAdvokati.Clear();
+            angazovanja.Clear();
         }
     }
 }

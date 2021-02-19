@@ -76,8 +76,8 @@ namespace DbBroker
       //      Console.WriteLine(command.CommandText);
      //       MessageBox.Show(command.CommandText);
             object id= command.ExecuteScalar();
-
-
+            //int a = (int)id;
+            //MessageBox.Show(a.ToString());
             if (id == DBNull.Value)
                 return 1;
 

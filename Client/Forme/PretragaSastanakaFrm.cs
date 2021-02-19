@@ -84,7 +84,7 @@ namespace Client.Forme
             }
             else
             {
-                MessageBox.Show("Morate odabrati predmet za prikaz");
+                MessageBox.Show("Morate odabrati sastanak za prikaz");
                 return;
             }
             

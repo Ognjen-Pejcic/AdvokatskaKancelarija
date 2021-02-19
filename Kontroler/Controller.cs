@@ -43,15 +43,15 @@ namespace Kontroler
             ApstraknaGenerickaOperacija operacija = new ZapamtiKlijentaSO();
             return (bool)operacija.ExecuteSO(klijent);
         }
-        public bool ZakaziSastanke(List<Sastanak> sastanci)
+        public bool ZakaziSastanke(List<Sastanak> sastanci, Sastanak sastanak)
         {
-            ApstraknaGenerickaOperacija operacija = new ZakaziSastankeSO();
-            List<DomenskiObjekat> lista = new List<DomenskiObjekat>();
-            foreach(Sastanak s  in sastanci)
-            {
-                lista.Add(s);
-            }
-            return (bool)operacija.ExecuteSO(lista);
+            ApstraknaGenerickaOperacija operacija = new ZakaziSastankeSO(sastanci);
+           // List<DomenskiObjekat> lista = new List<DomenskiObjekat>();
+            //foreach(Sastanak s  in sastanci)
+            //{
+            //    lista.Add(s);
+            //}
+            return (bool)operacija.ExecuteSO(sastanak);
         }
         public List<Sastanak> NadjiSastanke(string kriterijumPretrage, string tekstPretrage, DateTime datum, Sastanak sastanak)
         {

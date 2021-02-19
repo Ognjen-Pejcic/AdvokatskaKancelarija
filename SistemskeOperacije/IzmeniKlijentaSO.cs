@@ -19,11 +19,7 @@ namespace SistemskeOperacije
             return false;
         }
 
-        protected override object Execute(List<DomenskiObjekat> domenskiObjekat)
-        {
-            throw new NotImplementedException();
-        }
-
+  
         protected override void Validate(DomenskiObjekat domenskiObjekat)
         {
             if (!(domenskiObjekat is Klijent))
@@ -32,9 +28,6 @@ namespace SistemskeOperacije
             }
         }
 
-        protected override void Validate(List<DomenskiObjekat> domenskiObjekat)
-        {
-            throw new NotImplementedException();
-        }
+  
     }
 }

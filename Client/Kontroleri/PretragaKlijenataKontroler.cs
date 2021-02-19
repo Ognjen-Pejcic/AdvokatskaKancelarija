@@ -46,7 +46,7 @@ namespace Client.Kontroleri
             }
             else
             {
-                MessageBox.Show("Sistem ne moze da prikaze izabrani predmet");
+                MessageBox.Show("Sistem ne moze da ucita izabrani predmet");
             }
         }
     }

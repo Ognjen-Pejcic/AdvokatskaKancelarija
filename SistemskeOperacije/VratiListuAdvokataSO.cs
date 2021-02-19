@@ -16,11 +16,6 @@ namespace SistemskeOperacije
             return advokati;
         }
 
-        protected override object Execute(List<DomenskiObjekat> domenskiObjekat)
-        {
-            throw new NotImplementedException();
-        }
-
         protected override void Validate(DomenskiObjekat domenskiObjekat)
         {
             if (!(domenskiObjekat is Advokat))
@@ -29,9 +24,5 @@ namespace SistemskeOperacije
             }
         }
 
-        protected override void Validate(List<DomenskiObjekat> domenskiObjekat)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
