@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApstraknaGenerickaOperacija.cs" />
+    <Compile Include="OpstaSistemskaOperacija.cs" />
     <Compile Include="ArhivirajPredmetSO.cs" />
     <Compile Include="IzmeniKlijentaSO.cs" />
     <Compile Include="IzmeniPredmetSO.cs" />
@@ -53,7 +53,6 @@
     <Compile Include="UcitajKlijentaSO.cs" />
     <Compile Include="UcitajPredmetSO.cs" />
     <Compile Include="UcitajSastanakSO.cs" />
-    <Compile Include="VratiIDSO.cs" />
     <Compile Include="VratiListuAdvokataSO.cs" />
     <Compile Include="VratiListuKlijnataSO.cs" />
     <Compile Include="VratiListuVrstaSO.cs" />

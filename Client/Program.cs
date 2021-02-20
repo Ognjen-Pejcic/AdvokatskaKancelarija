@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Client.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,20 @@ namespace Client
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmLogin());
+            
+            while (true)
+            {
+                try
+                {
+                    
+                    Application.Run(new FrmLogin());
+                }
+                catch (ServerException se)
+                {
+                    MessageBox.Show(se.Message);
+                    Console.WriteLine(se.Message);
+                }
+            }
         }
     }
 }

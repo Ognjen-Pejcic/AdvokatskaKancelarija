@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace SistemskeOperacije
 {
-    public abstract class ApstraknaGenerickaOperacija
+    public abstract class OpstaSistemskaOperacija
     {
         protected abstract object Execute(DomenskiObjekat domenskiObjekat);
         protected abstract void Validate(DomenskiObjekat domenskiObjekat);

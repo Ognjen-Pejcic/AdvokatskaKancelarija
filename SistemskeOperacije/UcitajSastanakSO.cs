@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SistemskeOperacije
 {
-    public class UcitajSastanakSO : ApstraknaGenerickaOperacija
+    public class UcitajSastanakSO : OpstaSistemskaOperacija
     {
         protected override object Execute(DomenskiObjekat domenskiObjekat)
         {

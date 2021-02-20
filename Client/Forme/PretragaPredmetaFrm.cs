@@ -79,7 +79,6 @@ namespace Client.Forme
             }
             else
             {
-                MessageBox.Show("Sistem ne moze da prikaze izabrani predmet");
                 MessageBox.Show("Morate odabrati predmet za prikaz");
                 return;
             }
@@ -96,13 +95,16 @@ namespace Client.Forme
                 if ((bool)row.Cells[4].Value == false) { 
                 o = row.DataBoundItem;
                 kontroler.ArhivirajPredmet(o);
-                    MessageBox.Show("Sistem je ucitao predmet");
+                }
+                else
+                {
+                    MessageBox.Show("Sistem ne moze da arhivira predmet");
                 }
                
             }
             else
             {
-                MessageBox.Show("Morate odabrati predmet za prikaz");
+                MessageBox.Show("Morate odabrati predmet za arhiviranje");
                 return;
             }
             provera = false;

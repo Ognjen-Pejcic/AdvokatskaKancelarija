@@ -7,13 +7,24 @@ using System.Threading.Tasks;
 
 namespace SistemskeOperacije
 {
-    public class UcitajPredmetSO : ApstraknaGenerickaOperacija
+    public class UcitajPredmetSO : OpstaSistemskaOperacija
     {
         protected override object Execute(DomenskiObjekat domenskiObjekat)
         {
             Predmet predmet = (Predmet)domenskiObjekat;
             Predmet rezultat = (Predmet)broker.VratiJedanJoin(predmet);
-            // rezultat.Angazovanja = broker.VratiSveJoinWhere
+            Angazovanje a = new Angazovanje();
+            a.Predmet = new Predmet
+            {
+                PredmetID = rezultat.PredmetID
+            };
+            List<DomenskiObjekat> aa = broker.VratiSveJoinWhere(a);
+            List<Angazovanje> angazovanja = new List<Angazovanje>();
+            foreach(Angazovanje ang in aa)
+            {
+                angazovanja.Add(ang);
+            }
+            rezultat.Angazovanja = angazovanja;
             return rezultat;
         }
 

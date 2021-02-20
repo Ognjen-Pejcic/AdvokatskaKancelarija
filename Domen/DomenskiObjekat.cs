@@ -14,7 +14,7 @@ namespace Domen
         string PovratneVrednosti { get; }
         string JoinCondition { get; }
         string JoinFull { get; }
-       
+     
         string KriterijumPretrage { get; }
 
         string UpdateValues { get; }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SistemskeOperacije
 {
-    public class ZakaziSastankeSO : ApstraknaGenerickaOperacija
+    public class ZakaziSastankeSO : OpstaSistemskaOperacija
     {
         List<Sastanak> sastanci;
         public ZakaziSastankeSO(List<Sastanak> sastanci)
@@ -16,7 +16,7 @@ namespace SistemskeOperacije
         }
         protected override object Execute(DomenskiObjekat domenskiObjekat)
         {
-            List<Sastanak> sastanci = (List < Sastanak >) domenskiObjekat;
+           
             bool signal = true;
             foreach(Sastanak s in sastanci) { 
             if (!(broker.Sacuvaj(s) > 0))
@@ -27,19 +27,7 @@ namespace SistemskeOperacije
             return signal;
         }
 
-        protected override object Execute(List<DomenskiObjekat> domenskiObjekat)
-        {
-            
-            bool signal = true;
-            foreach (Sastanak s in sastanci)
-            {
-                if (!(broker.Sacuvaj(s) > 0))
-                {
-                    signal = false;
-                }
-            }
-            return signal;
-        }
+       
 
         protected override void Validate(DomenskiObjekat domenskiObjekat)
         {
@@ -49,14 +37,6 @@ namespace SistemskeOperacije
             }
         }
 
-        protected override void Validate(List<DomenskiObjekat> domenskiObjekat)
-        {
-            foreach(DomenskiObjekat obj in domenskiObjekat) { 
-            if (!(obj is Sastanak))
-            {
-                throw new ArgumentException();
-            }
-            }
-        }
+      
     }
 }

@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace SistemskeOperacije
 {
-    public class VratiListuVrstaSO : ApstraknaGenerickaOperacija
+    public class VratiListuVrstaSO : OpstaSistemskaOperacija
     {
         protected override object Execute(DomenskiObjekat domenskiObjekat)
         {

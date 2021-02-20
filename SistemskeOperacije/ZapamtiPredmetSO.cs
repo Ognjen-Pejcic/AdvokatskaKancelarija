@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace SistemskeOperacije
 {
     
-    public class ZapamtiPredmetSO : ApstraknaGenerickaOperacija
+    public class ZapamtiPredmetSO : OpstaSistemskaOperacija
     {
         public List<Angazovanje> angazovanja = new List<Angazovanje>();
         public ZapamtiPredmetSO(List<Angazovanje> angazovanja)
@@ -42,11 +42,6 @@ namespace SistemskeOperacije
             return odgovor;
         }
 
-        protected override object Execute(List<DomenskiObjekat> domenskiObjekat)
-        {
-            throw new NotImplementedException();
-        }
-
         protected override void Validate(DomenskiObjekat domenskiObjekat)
         {
             if (!(domenskiObjekat is Predmet))
@@ -55,9 +50,5 @@ namespace SistemskeOperacije
             }
         }
 
-        protected override void Validate(List<DomenskiObjekat> domenskiObjekat)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

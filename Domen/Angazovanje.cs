@@ -23,7 +23,7 @@ namespace Domen
 
         public string JoinCondition => throw new NotImplementedException();
         [Browsable(false)]
-        public string JoinFull => "angazovanje a join advokat aa on(a.advokatid = aa.advokatid) join premdet p on(p.predmetid = a.predmetid) ";
+        public string JoinFull => " a join advokat aa on(a.advokatid = aa.advokatid) join predmet p on(p.predmetid = a.predmetid) ";
         [Browsable(false)]
         public string KriterijumPretrage => $"a.predmetid = {Predmet.PredmetID}";
         [Browsable(false)]
@@ -31,37 +31,36 @@ namespace Domen
         [Browsable(false)]
         public string Arhiviranje => throw new NotImplementedException();
         [Browsable(false)]
-        public string UslovZaFiltriranje => throw new NotImplementedException();
+        public string UslovZaFiltriranje => $"a.predmetid = {Predmet.PredmetID}";
         [Browsable(false)]
-        public string PovratneVrednosti => throw new NotImplementedException();
+        public string PovratneVrednosti => "*";
 
         public List<DomenskiObjekat> GetEntities(SqlDataReader reader)
         {
             List<DomenskiObjekat> list = new List<DomenskiObjekat>();
             while (reader.Read())
             {
-                Predmet p = new Predmet
+                Angazovanje a = new Angazovanje
                 {
-                    PredmetID = reader.GetInt32(0),
-                    Klijent = new Klijent
+                    Predmet = new Predmet
                     {
-                        KlijentID = reader.GetInt32(1),
-                        ImeKlijenta = reader.GetString(10),
-                        Prezime = reader.GetString(11)
-                    },
-                    NazivPremdeta = reader.GetString(2),
-                    DatumOtvaranja = reader.GetDateTime(3),
-                    Arhiviran = reader.GetBoolean(4),
-                    OpisPredmeta = reader.GetString(5),
-                    Faza = reader.GetString(6),
-                    VrstaPostupka = new VrstaPostupka
-                    {
-                        VrstaPostupkaID = reader.GetInt32(7),
-                        NazivVrste = reader.GetString(15)
-                    }
+                        PredmetID = reader.GetInt32(0),
 
+                        NazivPremdeta = reader.GetString(10),
+                        DatumOtvaranja = reader.GetDateTime(11),
+                    },
+                    Advokat = new Advokat
+                    {
+                        AdvokatID = reader.GetInt32(1),
+                        ImeAdvokata = reader.GetString(4),
+                        PrezimeAdovakta = reader.GetString(5)
+                    }
                 };
-                list.Add(p);
+                
+                    
+
+                
+                list.Add(a);
             }
             return list;
         }
@@ -79,6 +78,10 @@ namespace Domen
         public void PostaviVrednostiPretrage(string kriterijum, string text, DateTime datum)
         {
             throw new NotImplementedException();
+        }
+        public override string ToString()
+        {
+            return Advokat.ImeAdvokata + Advokat.PrezimeAdovakta;
         }
     }
 }

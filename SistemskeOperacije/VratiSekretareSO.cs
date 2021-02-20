@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SistemskeOperacije
 {
-    public class VratiSekretareSO : ApstraknaGenerickaOperacija
+    public class VratiSekretareSO : OpstaSistemskaOperacija
     {
         protected override object Execute(DomenskiObjekat domenskiObjekat)
         {

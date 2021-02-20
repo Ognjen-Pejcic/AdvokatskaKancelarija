@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\ServerException.cs" />
     <Compile Include="Forme\FrmGlavna.cs">
       <SubType>Form</SubType>
     </Compile>

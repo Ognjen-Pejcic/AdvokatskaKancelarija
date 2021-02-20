@@ -23,14 +23,14 @@ namespace Client.Forme
         private bool Arhiviran;
         private string faza;
         private DateTime datum;
-
+        private object angazovanja;
         public PrikazPredmetaFrm()
         {
 
             InitializeComponent();
         }
 
-        public PrikazPredmetaFrm(int predmetID, object klijent, DateTime datumOtvaranja, bool arhiviran, string nazivPremdeta, string opisPredmeta, object vrstaPostupka, string faza) 
+        public PrikazPredmetaFrm(int predmetID, object klijent, DateTime datumOtvaranja, bool arhiviran, string nazivPremdeta, string opisPredmeta, object vrstaPostupka, string faza, object angazovanja) 
         {
             this.id = predmetID;
             this.datum = datumOtvaranja;
@@ -40,6 +40,7 @@ namespace Client.Forme
             this.opisPredmeta = opisPredmeta;
             this.vrstaPostupka = vrstaPostupka;
             this.faza = faza;
+            this.angazovanja = angazovanja;
             InitializeComponent();
         }
 
@@ -60,6 +61,9 @@ namespace Client.Forme
                     cbVrsta.SelectedItem = x;
                 }
             }
+            dataGridView1.DataSource = angazovanja;
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
         }
 
